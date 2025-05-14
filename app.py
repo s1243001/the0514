@@ -32,7 +32,7 @@ my_image = (
     .select('B.*')
 )
 
-vis_params = {'min': 100, 'max': 3500, 'bands': ['B8', 'B4', 'B3']}
+vis_params = {'min': 100, 'max': 3500, 'bands': ['B5', 'B4', 'B3']}
 
 
 
