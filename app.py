@@ -78,7 +78,7 @@ vis_params_001 = {'min': 0, 'max': 4, 'palette': palette}
 my_Map = geemap.Map()
 my_Map.centerObject(result001, 8)
 my_Map.addLayer(result001, vis_params_001, 'Labelled clusters')
-my_Map.add_legend(title='Land Cover Type', legend_dict = legend_dict, position = 'bottomleft')
+my_Map.add_legend(title='Land Cover Type', legend_dict = legend_dict, position = 'bottomright')
 
 clusterer_XMeans = ee.Clusterer.wekaXMeans().train(training001)
 
