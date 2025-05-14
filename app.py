@@ -33,9 +33,7 @@ my_image = (
 )
 
 vis_params = {'min': 100, 'max': 3500, 'bands': ['B8', 'B4', 'B3']}
-my_Map.centerObject(my_image, 8)
-my_Map.addLayer(my_image, vis_params, 'S2 flase color')
-my_Map.to_streamlit(height=600)
+
 
 
 
@@ -49,8 +47,7 @@ training001 = my_image.sample(
     }
 )
 
-my_Map.addLayer(training001, {}, 'Training samples')
-my_Map.to_streamlit(height=600)
+
 
 
 n_clusters = 10
@@ -58,36 +55,6 @@ clusterer_KMeans = ee.Clusterer.wekaKMeans(nClusters=n_clusters).train(training0
 
 
 result001 = my_image.cluster(clusterer_KMeans)
-
-
-my_Map.centerObject(result001, 8)
-my_Map.addLayer(result001.randomVisualizer(), {}, 'K-Means clusters')
-my_Map.to_streamlit(height=600)
-
-legend_dict = {
-    'zero': '#ab0000',
-    'one': '#1c5f2c',
-    'two': '#d99282',
-    'three': '#466b9f',
-    'four': '#ab6c28'
-}
-palette = list(legend_dict.values())
-vis_params_001 = {'min': 0, 'max': 4, 'palette': palette}
-
-
-my_Map.centerObject(result001, 8)
-my_Map.addLayer(result001, vis_params_001, 'Labelled clusters')
-my_Map.add_legend(title='Land Cover Type', legend_dict = legend_dict, position = 'bottomright')
-my_Map.to_streamlit(height=600)
-
-clusterer_XMeans = ee.Clusterer.wekaXMeans().train(training001)
-
-result002 = my_image.cluster(clusterer_XMeans)
-
-my_Map = geemap.Map()
-my_Map.centerObject(result002, 8)
-my_Map.addLayer(result002.randomVisualizer(), {}, 'X-means clusters')
-my_Map.to_streamlit(height=600)
 
 legend_dict2 = {
     'zero': '#ab0000',
@@ -110,12 +77,12 @@ my_Map.to_streamlit(height=600)
 
 my_Map = geemap.Map(center=[24.081653403304525, 120.5583462887228], zoom=10)
 
-left_layer = geemap.ee_tile_layer(result001.randomVisualizer(), {}, 'wekaKMeans clustered land cover')
-right_layer = geemap.ee_tile_layer(result002.randomVisualizer(), {}, 'wekaXMeans classified land cover')
+left_layer = geemap.ee_tile_layer(my_Image.randomVisualizer(), {}, 'original land cover')
+right_layer = geemap.ee_tile_layer(result002.randomVisualizer(), {}, 'wekaKMeans classified land cover')
 
 
 my_Map.split_map(left_layer, right_layer)
-
+my_Map.add_legend(title='Land Cover Type', legend_dict=legend_dict2, position='bottomright')
 
 
 my_Map.to_streamlit(height=600)
