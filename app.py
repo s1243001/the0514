@@ -69,16 +69,13 @@ legend_dict2 = {
 palette = list(legend_dict2.values())
 vis_params_002 = {'min': 0, 'max': 7, 'palette': palette}
 
-my_Map.centerObject(result002, 8)
-my_Map.addLayer(result002, vis_params_002, 'Labelled clusters')
-my_Map.add_legend(title='Land Cover Type', legend_dict=legend_dict2, position='bottomright')
-my_Map.to_streamlit(height=600)
+
 
 
 my_Map = geemap.Map(center=[24.081653403304525, 120.5583462887228], zoom=10)
 
 left_layer = geemap.ee_tile_layer(my_Image.randomVisualizer(), {}, 'original land cover')
-right_layer = geemap.ee_tile_layer(result002.randomVisualizer(), {}, 'wekaKMeans classified land cover')
+right_layer = geemap.ee_tile_layer(result001.randomVisualizer(), {}, 'wekaKMeans classified land cover')
 
 
 my_Map.split_map(left_layer, right_layer)
