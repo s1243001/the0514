@@ -55,7 +55,7 @@ training001 = my_image.sample(
 my_Map.addLayer(training001, {}, 'Training samples')
 
 
-n_clusters = 5
+n_clusters = 10
 clusterer_KMeans = ee.Clusterer.wekaKMeans(nClusters=n_clusters).train(training001)
 
 
