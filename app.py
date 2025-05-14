@@ -22,9 +22,7 @@ st.title("🌍 使用服務帳戶連接 GEE 的 Streamlit App")
 
 
 my_Map = geemap.Map()
-
 my_point = ee.Geometry.Point([120.5583462887228, 24.081653403304525])
-
 my_image = (
     ee.ImageCollection('COPERNICUS/S2_HARMONIZED')
     .filterBounds(my_point)
@@ -35,9 +33,7 @@ my_image = (
 )
 
 vis_params = {'min': 100, 'max': 3500, 'bands': ['B8', 'B4', 'B3']}
-
 my_Map.centerObject(my_image, 8)
-
 my_Map.addLayer(my_image, vis_params, 'S2 flase color')
 
 
@@ -61,7 +57,7 @@ clusterer_KMeans = ee.Clusterer.wekaKMeans(nClusters=n_clusters).train(training0
 
 result001 = my_image.cluster(clusterer_KMeans)
 
-my_Map = geemap.Map()
+
 my_Map.centerObject(result001, 8)
 my_Map.addLayer(result001.randomVisualizer(), {}, 'K-Means clusters')
 
@@ -75,10 +71,10 @@ legend_dict = {
 palette = list(legend_dict.values())
 vis_params_001 = {'min': 0, 'max': 4, 'palette': palette}
 
-my_Map = geemap.Map()
+
 my_Map.centerObject(result001, 8)
 my_Map.addLayer(result001, vis_params_001, 'Labelled clusters')
-my_Map.add_legend(title='Land Cover Type', legend_dict = legend_dict, position = 'bottomright')
+
 
 clusterer_XMeans = ee.Clusterer.wekaXMeans().train(training001)
 
