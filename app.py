@@ -21,18 +21,97 @@ st.set_page_config(layout="wide")
 st.title("🌍 使用服務帳戶連接 GEE 的 Streamlit App")
 
 
-# 地理區域
-point = ee.Geometry.Point([121.56, 25.03])
+my_Map = geemap.Map()
 
-# 擷取 Landsat NDVI
-image = ee.ImageCollection("LANDSAT/LC09/C02/T1_L2") \
-    .filterBounds(point) \
-    .filterDate("2022-01-01", "2022-12-31") \
-    .median()
+my_point = ee.Geometry.Point([120.5583462887228, 24.081653403304525])
 
-ndvi = image.normalizedDifference(["SR_B5", "SR_B4"]).rename("NDVI")
+my_image = (
+    ee.ImageCollection('COPERNICUS/S2_HARMONIZED')
+    .filterBounds(my_point)
+    .filterDate('2021-01-01', '2022-01-01')
+    .sort('CLOUDY_PIXEL_PERCENTAGE')
+    .first()
+    .select('B.*')
+)
 
-# 顯示地圖
-Map = geemap.Map(center=[25.03, 121.56], zoom=10)
-Map.addLayer(ndvi, {"min": 0, "max": 1, "palette": ["white", "green"]}, "NDVI")
+vis_params = {'min': 100, 'max': 3500, 'bands': ['B8', 'B4', 'B3']}
+
+my_Map.centerObject(my_image, 8)
+
+my_Map.addLayer(my_image, vis_params, 'S2 flase color')
+
+training001 = my_image.sample(
+    **{
+        'region': my_image.geometry(),  # 若不指定，則預設為影像my_image的幾何範圍。
+        'scale': 30,
+        'numPixels': 5000,
+        'seed': 0,
+        'geometries': True,  # 設為False表示取樣輸出的點將忽略其幾何屬性(即所屬網格的中心點)，無法作為圖層顯示，可節省記憶體。
+    }
+)
+
+my_Map.addLayer(training001, {}, 'Training samples')
+
+n_clusters = 5
+clusterer_KMeans = ee.Clusterer.wekaKMeans(nClusters=n_clusters).train(training001)
+
+result001 = my_image.cluster(clusterer_KMeans)
+
+my_Map = geemap.Map()
+my_Map.centerObject(result001, 8)
+my_Map.addLayer(result001.randomVisualizer(), {}, 'K-Means clusters')
+
+legend_dict = {
+    'zero': '#ab0000',
+    'one': '#1c5f2c',
+    'two': '#d99282',
+    'three': '#466b9f',
+    'four': '#ab6c28'
+}
+palette = list(legend_dict.values())
+vis_params_001 = {'min': 0, 'max': 4, 'palette': palette}
+
+my_Map = geemap.Map()
+my_Map.centerObject(result001, 8)
+my_Map.addLayer(result001, vis_params_001, 'Labelled clusters')
+my_Map.add_legend(title='Land Cover Type', legend_dict = legend_dict, position = 'bottomright')
+
+clusterer_XMeans = ee.Clusterer.wekaXMeans().train(training001)
+
+result002 = my_image.cluster(clusterer_XMeans)
+
+my_Map = geemap.Map()
+my_Map.centerObject(result002, 8)
+my_Map.addLayer(result002.randomVisualizer(), {}, 'X-means clusters')
+
+legend_dict2 = {
+    'A': '#ab0000',
+    'B': '#1c5f2c',
+    'C': '#d99282',
+    'D': '#466b9f',
+    'E': '#ab6c28',
+    'five': '#3cb371',
+    'six': '#ffff00',
+    'seven':'#d8bfd8'
+}
+palette = list(legend_dict2.values())
+vis_params_002 = {'min': 0, 'max': 7, 'palette': palette}
+
+
+my_Map = geemap.Map()
+my_Map.centerObject(result002, 8)
+my_Map.addLayer(result002, vis_params_002, 'Labelled clusters')
+my_Map.add_legend(title='Land Cover Type', legend_dict2 = legend_dict2, position = 'bottomright')
+
+
+my_Map = geemap.Map()
+
+left_layer = geemap.ee_tile_layer(result001.randomVisualizer(), {}, 'wekaKMeans clustered land cover')
+right_layer = geemap.ee_tile_layer(result002.randomVisualizer(), {}, 'wekaXMeans classified land cover')
+
+my_Map.centerObject(my_image.geometry(), 9)
+my_Map.split_map(left_layer, right_layer)
+
+
+
 Map.to_streamlit(height=600)
