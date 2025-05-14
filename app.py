@@ -67,14 +67,14 @@ legend_dict2 = {
     'seven':'#d8bfd8'
 }
 palette = list(legend_dict2.values())
-vis_params_002 = {'min': 0, 'max': 7, 'palette': palette}
+
 
 
 
 
 my_Map = geemap.Map(center=[24.081653403304525, 120.5583462887228], zoom=10)
 
-left_layer = geemap.ee_tile_layer(my_image.randomVisualizer(), {}, 'original land cover')
+left_layer = geemap.ee_tile_layer(my_image(), {}, 'original land cover')
 right_layer = geemap.ee_tile_layer(result001.randomVisualizer(), {}, 'wekaKMeans classified land cover')
 
 
