@@ -99,17 +99,17 @@ vis_params_002 = {'min': 0, 'max': 7, 'palette': palette}
 
 
 
-my_Map = geemap.Map()
 my_Map.centerObject(result002, 8)
 my_Map.addLayer(result002, vis_params_002, 'Labelled clusters')
+my_Map.add_legend(title='Land Cover Type', legend_dict2 = legend_dict2, position = 'bottomright')
 
 
-my_Map = geemap.Map()
+my_Map = geemap.Map(center=[24.081653403304525, 120.5583462887228], zoom=10)
 
 left_layer = geemap.ee_tile_layer(result001.randomVisualizer(), {}, 'wekaKMeans clustered land cover')
 right_layer = geemap.ee_tile_layer(result002.randomVisualizer(), {}, 'wekaXMeans classified land cover')
 
-my_Map.centerObject(my_image.geometry(), 9)
+
 my_Map.split_map(left_layer, right_layer)
 
 
