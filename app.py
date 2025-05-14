@@ -18,7 +18,7 @@ ee.Initialize(credentials)
 
 ###############################################
 st.set_page_config(layout="wide")
-st.title("🌍 使用服務帳戶連接 GEE 的 Streamlit App")
+st.title("無雲衛星圖像和wekaKMeans分群器圖像分割地圖視窗")
 
 
 my_Map = geemap.Map()
