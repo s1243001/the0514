@@ -40,6 +40,8 @@ my_Map.centerObject(my_image, 8)
 
 my_Map.addLayer(my_image, vis_params, 'S2 flase color')
 
+
+
 training001 = my_image.sample(
     **{
         'region': my_image.geometry(),  # 若不指定，則預設為影像my_image的幾何範圍。
@@ -52,8 +54,10 @@ training001 = my_image.sample(
 
 my_Map.addLayer(training001, {}, 'Training samples')
 
+
 n_clusters = 5
 clusterer_KMeans = ee.Clusterer.wekaKMeans(nClusters=n_clusters).train(training001)
+
 
 result001 = my_image.cluster(clusterer_KMeans)
 
@@ -71,9 +75,7 @@ legend_dict = {
 palette = list(legend_dict.values())
 vis_params_001 = {'min': 0, 'max': 4, 'palette': palette}
 
-my_Map = geemap.Map()
-my_Map.centerObject(result001, 8)
-my_Map.addLayer(result001, vis_params_001, 'Labelled clusters')
+
 my_Map.add_legend(title='Land Cover Type', legend_dict = legend_dict, position = 'bottomright')
 
 clusterer_XMeans = ee.Clusterer.wekaXMeans().train(training001)
@@ -85,11 +87,11 @@ my_Map.centerObject(result002, 8)
 my_Map.addLayer(result002.randomVisualizer(), {}, 'X-means clusters')
 
 legend_dict2 = {
-    'A': '#ab0000',
-    'B': '#1c5f2c',
-    'C': '#d99282',
-    'D': '#466b9f',
-    'E': '#ab6c28',
+    'zero': '#ab0000',
+    'one': '#1c5f2c',
+    'two': '#d99282',
+    'three': '#466b9f',
+    'four': '#ab6c28',
     'five': '#3cb371',
     'six': '#ffff00',
     'seven':'#d8bfd8'
@@ -98,9 +100,7 @@ palette = list(legend_dict2.values())
 vis_params_002 = {'min': 0, 'max': 7, 'palette': palette}
 
 
-my_Map = geemap.Map()
-my_Map.centerObject(result002, 8)
-my_Map.addLayer(result002, vis_params_002, 'Labelled clusters')
+
 my_Map.add_legend(title='Land Cover Type', legend_dict2 = legend_dict2, position = 'bottomright')
 
 
