@@ -53,7 +53,7 @@ st.success(f"目前選擇的日期區間為：{start_date} 到 {end_date}")
 
 st.title("利用擴充器示範")
 
-with st.expander("展示jpg檔"):
+with st.expander("展示gif檔"):
     st.image("2sfca1500m.jpg")
 
 with st.expander("播放mp4檔"):
