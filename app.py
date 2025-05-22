@@ -1,5 +1,5 @@
 import streamlit as st
-from datetime import date
+import leafmap.foliumap as leafmap
 
 st.set_page_config(layout="wide", page_title="自行車環島Go！Go！")
 
