@@ -33,7 +33,7 @@ style = {
     "fillColor": "none" # No fill color
 }
 route1_url = "https://github.com/s1243001/the0514/blob/main/route1.shp"
-m.add_shp(route1_url, layer_name="環島一", style=style)
+m.add_Layer(route1_url, layer_name="環島一", style=style)
 
 
 with st.expander("展示gif檔"):
