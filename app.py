@@ -26,7 +26,14 @@ st.markdown(markdown)
 
 
 m = leafmap.Map(center = [42.5, -4.0], zoom = 7 , minimap_control=True)
-
+style = {
+    "color": "red",  # Outline color
+    "weight": 1.5,      # Line thickness
+    "opacity": 0.5,     # Line transparency
+    "fillColor": "none" # No fill color
+}
+route1_url = "https://github.com/s1243001/the0514/blob/main/route1.shp"
+m.add_shp(route1_url, layer_name="環島一", style=style)
 
 
 with st.expander("展示gif檔"):
