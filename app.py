@@ -27,6 +27,8 @@ st.markdown(markdown)
 
 m = leafmap.Map(center = [42.5, -4.0], zoom = 7 , minimap_control=True)
 
+
+
 with st.expander("展示gif檔"):
     st.image("2sfca1500m.jpg")
 
