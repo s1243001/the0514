@@ -32,8 +32,8 @@ style = {
     "opacity": 0.5,     # Line transparency
     "fillColor": "none" # No fill color
 }
-route1_url = "https://github.com/s1243001/the0514/blob/main/route1.shp"
-m.add_Layer(route1_url, layer_name="環島一", style=style)
+route1_url = "https://github.com/s1243001/the0514/blob/main/route1.geojson"
+m.add_geojson(route1_url, layer_name="環島一", style=style)
 
 
 with st.expander("展示gif檔"):
