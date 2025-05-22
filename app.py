@@ -33,7 +33,7 @@ style = {
     "fillColor": "none" # No fill color
 }
 route1_url = "https://github.com/s1243001/the0514/blob/main/route1.geojson"
-m.add_geojson(route1_url, layer_name="route1", style=style)
+m.add_geojson(route1_url, layer_name="route1")
 m.to_streamlit(height=700)
 
 
