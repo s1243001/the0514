@@ -41,6 +41,11 @@ option = st.selectbox(
     ['台北-新竹','新竹-台中','台中-嘉義','嘉義-高雄','高雄-屏東','屏東-台東','台東-花蓮','花蓮-宜蘭','宜蘭-台北'])
 st.text(f'你的答案：{option}')
 
+if option='台北-新竹'
+    t_s="taipei_hsinchu.geojson"
+    m.add_geojson(t_s, layer_name="台北-新竹",color=red)
+    m.to_streamlit
+
 with st.expander("展示gif檔"):
     st.image("2sfca1500m.jpg")
 
