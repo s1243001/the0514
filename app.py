@@ -28,7 +28,7 @@ st.markdown(markdown)
 m = leafmap.Map(center = [42.5, -4.0], zoom = 7 , minimap_control=True)
 style = {
     "color": "red",  # Outline color
-    "weight": 1.5,      # Line thickness
+    "weight": 3,      # Line thickness
     "opacity": 0.5,     # Line transparency
     "fillColor": "none" # No fill color
 }
