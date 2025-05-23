@@ -43,7 +43,7 @@ st.text(f'你的答案：{option}')
 
 if option =='台北-新竹':
     t_s="taipei_hsinchu.geojson"
-    m.add_geojson(t_s, layer_name="台北-新竹",color=red)
+    m.add_geojson(t_s, layer_name="台北-新竹",style=style)
     m.to_streamlit
 
 with st.expander("展示gif檔"):
