@@ -6,64 +6,68 @@ import numpy as np
 st.title("路段上的旅遊景點")
 
 if option == '台北-新竹'
-m = leafmap.Map(center=[42.5, -4.0], zoom=7, minimap_control=True)
+    m = leafmap.Map(center=[121.182838, 24.949132], zoom=7, minimap_control=True)
+    style = {"color": "red", "weight": 3, "opacity": 0.8}
+    m.add_geojson(t_s, layer_name="台北-新竹", style=style)
+    data = "play_ts.csv"
+    m.add_points_from_xy(data, x="X", y="Y")
 
-m.add_geojson(cities_url, layer_name="Intersect towns")
+else if option == '新竹-台中'
+        m = leafmap.Map(center=[120.740153, 24.462711], zoom=7, minimap_control=True)
+        style = {"color": "orange", "weight": 3, "opacity": 0.8}
+        m.add_geojson(s_tc, layer_name="新竹-台中", style=stlye)
+        data = "play_stc.csv"
+        m.add_points_from_xy(data, x="X", y="Y")
 
-geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
-style = {"color": "black", "weight": 3, "opacity": 0.8}
-m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
+else if option == '台中-嘉義'
+        m = leafmap.Map(center=[120.292326, 23.809488], zoom=7, minimap_control=True)
+        style = {"color": "purple", "weight": 3, "opacity": 0.8}
+        m.add_geojson(tc_jia, layer_name="台中-嘉義", style=style)
+        data = "play_tcjia.csv"
+        m.add_points_from_xy(data, x="X", y="Y")
 
-data = "https://chinchillaz.github.io/streamlit-hw/Camino/Caminos_attraction3.csv"
-m.add_points_from_xy(data, x="Y", y="X")
+else if option == '嘉義-高雄'
+        m = leafmap.Map(center=[120.148435, 22.999866], zoom=7, minimap_control=True)
+        style = {"color": "pink", "weight": 3, "opacity": 0.8}
+        m.add_geojson(jia_kao, layer_name="嘉義-高雄", style=style)
+        data = "play_jiakao.csv"
+        m.add_points_from_xy(data, x="X", y="Y")
 
-# Display the map
+else if option == '高雄-屏東'
+        m = leafmap.Map(center=[120.536198, 22.402317], zoom=7, minimap_control=True)
+        style = {"color": "yellow", "weight": 3, "opacity": 0.8}
+        m.add_geojson(kao_ping, layer_name="高雄-屏東", style=style)
+        data = "play_kaoping.csv"
+        m.add_points_from_xy(data, x="X", y="Y")
+
+else if option == '屏東-台東'
+        m = leafmap.Map(center=[120.834135, 22.781440], zoom=7, minimap_control=True)
+        style = {"color": "blue", "weight": 3, "opacity": 0.8}
+        m.add_geojson(ping_tait, layer_name="屏東-台東", style=syle)
+        data = "play_pingtait.csv"
+        m.add_points_from_xy(data, x="X", y="Y")
+
+else if option == '台東-花蓮'
+        m = leafmap.Map(center=[121.335207, 23.429920], zoom=7, minimap_control=True)
+        style = {"color": "grey", "weight": 3, "opacity": 0.8}
+        m.add_geojson(tait_hua, layer_name="台東-花蓮", style=style)
+        data = "play_taithua.csv"
+        m.add_points_from_xy(data, x="X", y="Y")
+
+else if option == '花蓮-宜蘭'
+        m = leafmap.Map(center=[121.532195, 24.228917], zoom=7, minimap_control=True)
+        style = {"color": "black", "weight": 3, "opacity": 0.8}
+        m.add_geojson(hua_yi, layer_name="花蓮-宜蘭", style=style)
+        data = "play_huayi.csv"
+        m.add_points_from_xy(data, x="X", y="Y")
+
+else if option == '宜蘭-台北'
+        m = leafmap.Map(center=[121.675311, 24.899394], zoom=7, minimap_control=True)
+        style = {"color": "green", "weight": 3, "opacity": 0.8}
+        m.add_geojson(yilan_taip, layer_name="宜蘭-台北", style=style)
+        data = "play_yitaip.csv"
+        m.add_points_from_xy(data, x="X", y="Y")
+
 m.to_streamlit(height=700)
 
 
-
-st.markdown("<br><br>", unsafe_allow_html=True)  # Adds three line breaks
-st.markdown("#### 🎇推薦景點清點🎇")
-markdown = """
-    精心蒐集各大平台上的熱門景點，讓您不再為選擇目的地煩惱。從歷史名勝到自然奇觀，為您推薦最值得一遊的地方。<br>
-    歡迎勾選有興趣的目的地，按「確認」按鈕後，會在下方顯示清單~
-"""
-st.markdown(markdown, unsafe_allow_html=True)
-
-
-df = pd.read_csv(data)
-df['I wanna go!!!!!!!'] = False
-# st.dataframe(df)
-
-edited_df = st.data_editor(
-    df,
-    column_config={
-        "I wanna go!!!!!!!": st.column_config.CheckboxColumn(
-            "I wanna go!!!!!!!",
-            help="Select if you want to visit this place",
-            default=False,
-        )
-    },
-    disabled=[],  # You can disable other columns if needed
-    hide_index=True,  # Hide the index if you want
-)
-
-
-
- #Display the "我有興趣的景點" section title
-st.markdown("#### 🎇我有興趣的景點🎇")
-
-# Add a "確認" button just below the table
-if st.button('確認'):
-    # Extract the selected rows where 'I wanna go!!!!!!!' is True
-    selected_attractions = edited_df[edited_df['I wanna go!!!!!!!'] == True]
-    
-    # Check if there are any selected attractions
-    if not selected_attractions.empty:
-        # Create a formatted list with both the 'id' and 'Attractions' columns
-        attractions_text = "<br>".join([f'<span style="color:orange;"> {row["id"]} - {row["Attractions"]}</span>' 
-                                       for index, row in selected_attractions.iterrows()])
-        # Display the selected attractions in orange, each on a new line
-        st.markdown(f'<br>{attractions_text}', unsafe_allow_html=True)
-    else:
-        st.markdown('<span style="color:orange;">還沒有選擇任何景點</span>', unsafe_allow_html=True)
