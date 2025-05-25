@@ -3,6 +3,7 @@ import leafmap.foliumap as leafmap
 
 st.set_page_config(layout="wide", page_title="自行車環島Go！Go！")
 
+st.title("歡迎來到台灣自行車環島旅行指南")
 st.markdown(
     """
     This multipage app template demonstrates various interactive web apps created using [streamlit](https://streamlit.io), [GEE](https://earthengine.google.com/), 
