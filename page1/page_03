@@ -3,21 +3,11 @@ import leafmap.foliumap as leafmap
 import pandas as pd
 import numpy as np
 
-st.set_page_config(layout="wide")
+st.title("路段上的旅遊景點")
 
-
-
-logo = "https://chinchillaz.github.io/streamlit-hw/logo_sun-removebg-preview.png"
-st.sidebar.image(logo)
-
-
-st.title("旅遊景點推薦 🏰")
-
-# Initialize the map with center coordinates and zoom level
+if option == '台北-新竹'
 m = leafmap.Map(center=[42.5, -4.0], zoom=7, minimap_control=True)
 
-
-cities_url = "https://chinchillaz.github.io/streamlit-hw/country_interest.geojson"
 m.add_geojson(cities_url, layer_name="Intersect towns")
 
 geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
