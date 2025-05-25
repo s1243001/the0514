@@ -4,17 +4,17 @@ import pandas as pd
 st.title("路段上的補給站們")
 
 # 檢查是否有日期資訊
-if 'option' in st.session_state :
+if 'option' in st.session_state:
     # 讀取資料
-    df = pd.read_csv("station.csv", parse_dates=['路線'])
+    df = pd.read_csv("station.csv")
 
     # 取得篩選條件
-    route1 = st.session_state['option']
+    route_station = st.session_state['option']
     
     # 篩選
-    filtered_df = df[(df['路線'] == pd.to_datetime(route1)) ]
+    filtered_df = df[df['路線'] == route_station]
 
-    st.write(f"你在*上一頁*選擇的路段是：{option}")
+    st.write(f"你在*上一頁*選擇的路段是：{route1}")
     st.header("這是你選擇路段的補給站")
     st.dataframe(filtered_df)
     
