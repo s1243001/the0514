@@ -23,8 +23,7 @@ markdown = """
 
 st.markdown(markdown)
 
-
-
+st.header("自行車環島一號線路線圖")
 
 m = leafmap.Map(center = [42.5, -4.0], zoom = 7 , minimap_control=True)
 style = {
@@ -36,12 +35,4 @@ style = {
 route1 = "route1.geojson"
 m.add_geojson(route1, layer_name="route1",style=style)
 m.to_streamlit(height=700)
-
-with st.expander("展示gif檔"):
-    st.image("2sfca1500m.jpg")
-
-with st.expander("播放mp4檔"):
-    video_file = open("2sfca1500m.jpg", "rb")  # "rb"指的是讀取二進位檔案（圖片、影片）
-    video_bytes = video_file.read()
-    st.video(video_bytes)
     
