@@ -6,19 +6,17 @@ st.set_page_config(layout="wide", page_title="自行車環島Go！Go！")
 st.title("歡迎來到台灣自行車環島旅行指南")
 st.markdown(
     """
-    This multipage app template demonstrates various interactive web apps created using [streamlit](https://streamlit.io), [GEE](https://earthengine.google.com/), 
-    [geemap](https://leafmap.org) and [leafmap](https://leafmap.org). 
+    自行車環島是被喻為台灣人一定要做的三件事其中之一；環島顧名思義就是繞台灣一圈，其路線五花八門、可長可短，因此選用最熱門的環島路線「環1」作為例子。這條路線起點為台北市的松山車站，途中經過埤塘、鄉村，穿越山脈以及河谷既是一場身心挑戰，也是文化與自然的體驗。今天，無論是出於對達成身為台灣人的成就，還是文化探索或運動等目的，都能在名為「環1」的這條道路上，看到許多人踏上這段富有意義的旅程，感受台灣各個地方的美麗之處。
     """
 )
 
 st.header("Instructions")
 
 markdown = """
-1. You can use it as a template for your own project.
-2. Customize the sidebar by changing the sidebar text and logo in each Python file.
-3. Find your favorite emoji from https://emojipedia.org.
-4. Add a new app to the `pages/` directory with an emoji in the file name, e.g., `1_🚀_Chart.py`.
-
+1. 選擇你的環島路段
+2. 查看你路線上的補給站
+3. 推薦的景點介紹
+4. 推薦的美食餐廳
 """
 
 st.markdown(markdown)
