@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import leafmap
+import leafmap.foliumap as leafmap
 
 st.title("路段上的補給站們")
 
