@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import leafmap
 
 st.title("路段上的補給站們")
 
@@ -12,11 +13,11 @@ if 'option' in st.session_state:
     route_station = st.session_state['option']
     
     # 篩選
-    filtered_df = df[df['路線'] == route_station]
+    station_df = df[df['路線'] == route_station]
 
     st.write(f"你在*上一頁*選擇的路段是：{route1}")
     st.header("這是你選擇路段的補給站")
-    st.dataframe(filtered_df)
+    st.dataframe(station_df)
     
 else:
     st.warning("請先回上一頁選擇路段！")
