@@ -19,5 +19,6 @@ if 'option' in st.session_state:
     st.header("這是你選擇路段的補給站")
     st.dataframe(station_df)
     
+    
 else:
     st.warning("請先回上一頁選擇路段！")
