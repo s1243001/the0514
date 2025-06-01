@@ -70,7 +70,7 @@ if 'selected_route' in st.session_state:
                     station_df,
                     x="X",  # 經度欄位為 "X"
                     y="Y",  # 緯度欄位為 "Y"
-                    popup=["路線"], # 可選：顯示補給站名稱、地址、電話等
+                    popup=["路線","門市名稱","地址","X","Y"], # 可選：顯示補給站名稱、地址、電話等
                     tooltip="門市名稱", # 鼠標懸停時顯示名稱
                     color="blue", # 點的顏色
                     marker_cluster=True # 將附近的點聚類
