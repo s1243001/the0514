@@ -4,7 +4,7 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 
 st.set_page_config(
-    page_title="路段選擇與地圖",
+    page_title="選擇你的環島路段🛣️/看看路線起伏⛰️",
     page_icon="🗺️",
     layout="wide"
 )
@@ -14,15 +14,15 @@ st.title("選擇你的路段")
 # 定義所有路段的 GeoJSON 檔案名、中心點和圖片路徑
 # 注意：這裡的中心點座標是 [緯度, 經度]
 section_data = {
-    '台北-新竹': {'geojson': "geojson/taipei_hsinchu.geojson", 'center': [24.949132, 121.182838], 'image': 'images/taipei_hsinchu.png'},
-    '新竹-台中': {'geojson': "geojson/hsinchu_taichung.geojson", 'center': [24.462711, 120.740153], 'image': 'images/hsinchu_taichung.png'},
-    '台中-嘉義': {'geojson': "geojson/taichung_jiayi.geojson", 'center': [23.809488, 120.292326], 'image': 'images/taichung_jiayi.png'},
-    '嘉義-高雄': {'geojson': "geojson/jiayi_kaohsung.geojson", 'center': [22.999866, 120.148435], 'image': 'images/jiayi_kaohsung.png'},
-    '高雄-屏東': {'geojson': "geojson/kaohsung_pingtung.geojson", 'center': [22.402317, 120.536198], 'image': 'images/kaohsung_pingtung.png'},
-    '屏東-台東': {'geojson': "geojson/pingtung_taitung.geojson", 'center': [22.781440, 120.834135], 'image': 'images/pingtung_taitung.png'},
-    '台東-花蓮': {'geojson': "geojson/taitung_huaien.geojson", 'center': [23.429920, 121.335207], 'image': 'images/taitung_hualien.png'},
-    '花蓮-宜蘭': {'geojson': "geojson/hualien_yilan.geojson", 'center': [24.228917, 121.532195], 'image': 'images/hualien_yilan.png'},
-    '宜蘭-台北': {'geojson': "geojson/yilan_taipei.geojson", 'center': [24.899394, 121.675311], 'image': 'images/yilan_taipei.png'},
+    '台北-新竹': {'geojson': "geojson/taipei_hsinchu.geojson", 'center': [24.949132, 121.182838], 'image': 'taihsin_ele.png'},
+    '新竹-台中': {'geojson': "geojson/hsinchu_taichung.geojson", 'center': [24.462711, 120.740153], 'image': 'hsintaic_ele.png'},
+    '台中-嘉義': {'geojson': "geojson/taichung_jiayi.geojson", 'center': [23.809488, 120.292326], 'image': 'taicjia_ele.png'},
+    '嘉義-高雄': {'geojson': "geojson/jiayi_kaohsung.geojson", 'center': [22.999866, 120.148435], 'image': 'jiakao_ele.png'},
+    '高雄-屏東': {'geojson': "geojson/kaohsung_pingtung.geojson", 'center': [22.402317, 120.536198], 'image': 'kaoping_ele.png'},
+    '屏東-台東': {'geojson': "geojson/pingtung_taitung.geojson", 'center': [22.781440, 120.834135], 'image': 'pingtait_ele.png'},
+    '台東-花蓮': {'geojson': "geojson/taitung_huaien.geojson", 'center': [23.429920, 121.335207], 'image': 'taithua_ele.png'},
+    '花蓮-宜蘭': {'geojson': "geojson/hualien_yilan.geojson", 'center': [24.228917, 121.532195], 'image': 'huayi_ele.png'},
+    '宜蘭-台北': {'geojson': "geojson/yilan_taipei.geojson", 'center': [24.899394, 121.675311], 'image': 'yitaip_ele.png'},
 }
 
 # 從字典中獲取路段列表
