@@ -1,7 +1,7 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
 
-st.title("選擇你的路段")
+st.title("選擇你的環島路段🛣️/看看路線起伏⛰️")
 
 # 定義所有路段
 sections = [
