@@ -47,7 +47,7 @@ if option in section_data:
     # 顯示圖片 (如果存在)
     if image_path:
         try:
-            st.image(image_path, caption=f'{option} 路段示意圖', use_column_width=True)
+            st.image(image_path, caption=f'{option} 路段示意圖', use_container_width=True)
         except FileNotFoundError:
             st.warning(f"找不到 '{image_path}' 這張圖片，請確認檔案是否存在。")
 
