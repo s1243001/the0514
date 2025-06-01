@@ -8,6 +8,13 @@ option = st.selectbox(
     ['台北-新竹', '新竹-台中', '台中-嘉義', '嘉義-高雄','高雄-屏東','屏東-台東','台東-花蓮','花蓮-宜蘭','宜蘭-台北'])
 st.text(f'你的答案：{option}')
 
+ style = {
+        "color": "red",  # Outline color
+        "weight": 3,      # Line thickness
+        "opacity": 0.5,     # Line transparency
+        "fillColor": "none" # No fill color
+    }
+
 if option == '台北-新竹':
     t_s = "taipei_hsinchu.geojson"
     m = leafmap.Map(center = [121.182838, 24.949132], zoom = 7 , minimap_control=True)
