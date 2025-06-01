@@ -12,15 +12,15 @@ sections = [
 # 定義每個路段的 GeoJSON 檔案名、中心點和圖片路徑
 # 如果沒有圖片，可以將 'image_path' 設為 None 或不包含該鍵
 section_data = {
-    '台北-新竹': {'geojson': "taipei_hsinchu.geojson", 'center': [24.949132, 121.182838], 'image': 'taiphsin.png'},
-    '新竹-台中': {'geojson': "hsinchu_taichung.geojson", 'center': [24.462711, 120.740153], 'image': 'hsintaic.png'},
-    '台中-嘉義': {'geojson': "taichung_jiayi.geojson", 'center': [23.809488, 120.292326], 'image': 'taicjia.png'},
-    '嘉義-高雄': {'geojson': "jiayi_kaohsung.geojson", 'center': [22.999866, 120.148435], 'image': 'jiakao.png'},
-    '高雄-屏東': {'geojson': "kaohsung_pingtung.geojson", 'center': [22.402317, 120.536198], 'image': 'kaoping.png'},
-    '屏東-台東': {'geojson': "pingtung_taitung.geojson", 'center': [22.781440, 120.834135], 'image': 'pingtait.png'},
-    '台東-花蓮': {'geojson': "taitung_huaien.geojson", 'center': [23.429920, 121.335207], 'image': 'taithua.png'},
-    '花蓮-宜蘭': {'geojson': "hualien_yilan.geojson", 'center': [24.228917, 121.532195], 'image': 'huayi.png'},
-    '宜蘭-台北': {'geojson': "yilan_taipei.geojson", 'center': [24.899394, 121.675311], 'image': 'yitaip.png'},
+    '台北-新竹': {'geojson': "taipei_hsinchu.geojson", 'center': [24.949132, 121.182838], 'image': 'taiphsin_ele.png'},
+    '新竹-台中': {'geojson': "hsinchu_taichung.geojson", 'center': [24.462711, 120.740153], 'image': 'hsintaic_ele.png'},
+    '台中-嘉義': {'geojson': "taichung_jiayi.geojson", 'center': [23.809488, 120.292326], 'image': 'taicjia_ele.png'},
+    '嘉義-高雄': {'geojson': "jiayi_kaohsung.geojson", 'center': [22.999866, 120.148435], 'image': 'jiakao_ele.png'},
+    '高雄-屏東': {'geojson': "kaohsung_pingtung.geojson", 'center': [22.402317, 120.536198], 'image': 'kaoping_ele.png'},
+    '屏東-台東': {'geojson': "pingtung_taitung.geojson", 'center': [22.781440, 120.834135], 'image': 'pingtait_ele.png'},
+    '台東-花蓮': {'geojson': "taitung_huaien.geojson", 'center': [23.429920, 121.335207], 'image': 'taithua_ele.png'},
+    '花蓮-宜蘭': {'geojson': "hualien_yilan.geojson", 'center': [24.228917, 121.532195], 'image': 'huayi_ele.png'},
+    '宜蘭-台北': {'geojson': "yilan_taipei.geojson", 'center': [24.899394, 121.675311], 'image': 'yitaip_ele.png'},
 }
 
 option = st.selectbox(
