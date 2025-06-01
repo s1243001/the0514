@@ -70,7 +70,7 @@ if 'selected_route' in st.session_state:
                     station_df,
                     x="經度",
                     y="緯度",
-                    popup=["名稱", "地址", "電話"], # 可選：顯示補給站名稱、地址、電話等
+                    popup=["名稱"], # 可選：顯示補給站名稱、地址、電話等
                     tooltip="名稱", # 鼠標懸停時顯示名稱
                     color="blue", # 點的顏色
                     marker_cluster=True # 將附近的點聚類
@@ -92,6 +92,6 @@ if 'selected_route' in st.session_state:
         st.error(f"找不到 '{selected_route}' 路段的配置資訊。")
 
 else:
-    st.warning("請先回**主頁**選擇路段！")
+    st.warning("請先回第一頁選擇路段！")
     if st.button("回主頁"):
-        st.switch_page("Home") # 注意：這裡導航回你的主頁 (Home.py)
+        st.switch_page("page01_test") # 注意：這裡導航回你的主頁 (Home.py)
