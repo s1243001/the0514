@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import leafmap.foliumap as leafmap
 
+# 頁面配置
 st.set_page_config(
     page_title="路段補給站",
     page_icon="🍔",
@@ -11,7 +12,7 @@ st.set_page_config(
 st.title("路段上的補給站們")
 
 # 定義路段資料，包含 GeoJSON 和 CSV 補給站檔案路徑
-# 緯度, 經度 (Leafmap/Folium 通常是 [緯度, 經度])
+# 注意：這裡的中心點座標是 [緯度, 經度]
 section_data = {
     '台北-新竹': {'geojson': "geojson/taipei_hsinchu.geojson", 'center': [24.949132, 121.182838], 'station_csv': "csv/station_ts.csv"},
     '新竹-台中': {'geojson': "geojson/hsinchu_taichung.geojson", 'center': [24.462711, 120.740153], 'station_csv': "csv/station_stc.csv"},
@@ -27,7 +28,7 @@ section_data = {
 # 檢查 session_state 中是否有 'selected_route'
 if 'selected_route' in st.session_state:
     selected_route = st.session_state['selected_route']
-    st.write(f"你在**主頁**選擇的路段是：**{selected_route}**")
+    st.write(f"你在**上一頁**選擇的路段是：**{selected_route}**")
     st.header("這是你選擇路段的補給站")
 
     # 獲取當前路段的 GeoJSON 和 CSV 檔案路徑以及中心點
@@ -60,6 +61,7 @@ if 'selected_route' in st.session_state:
                 m.add_geojson(geojson_file, layer_name=selected_route, style=route_style)
             except FileNotFoundError:
                 st.error(f"找不到 '{geojson_file}' 這個 GeoJSON 檔案。")
+                st.info("請確認 GeoJSON 檔案位於 'geojson/' 子目錄中，或提供正確的路徑。")
 
             # 添加補給站點
             # 確保 CSV 檔有 '經度' 和 '緯度' 欄位
@@ -92,4 +94,4 @@ if 'selected_route' in st.session_state:
 else:
     st.warning("請先回**主頁**選擇路段！")
     if st.button("回主頁"):
-        st.switch_page("app.py") 
+        st.switch_page("Home") # 注意：這裡導航回你的主頁 (Home.py)
