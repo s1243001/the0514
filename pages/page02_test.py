@@ -49,7 +49,7 @@ if 'selected_route' in st.session_state:
 
         # 讀取補給站資料
         try:
-            # 假設 CSV 檔包含 '經度' 和 '緯度' 欄位
+            # 讀取 CSV 檔
             station_df = pd.read_csv(station_csv_file)
             st.dataframe(station_df)
 
@@ -64,13 +64,13 @@ if 'selected_route' in st.session_state:
                 st.info("請確認 GeoJSON 檔案位於 'geojson/' 子目錄中，或提供正確的路徑。")
 
             # 添加補給站點
-            # 確保 CSV 檔有 '經度' 和 '緯度' 欄位
-            if not station_df.empty and '經度' in station_df.columns and '緯度' in station_df.columns:
+            # ***關鍵修改點：將 x 和 y 參數改為 "X" 和 "Y"***
+            if not station_df.empty and 'X' in station_df.columns and 'Y' in station_df.columns:
                 m.add_points_from_xy(
                     station_df,
-                    x="經度",
-                    y="緯度",
-                    popup=["名稱"], # 可選：顯示補給站名稱、地址、電話等
+                    x="X",  # 經度欄位為 "X"
+                    y="Y",  # 緯度欄位為 "Y"
+                    popup=["名稱", "地址", "電話"], # 可選：顯示補給站名稱、地址、電話等
                     tooltip="名稱", # 鼠標懸停時顯示名稱
                     color="blue", # 點的顏色
                     marker_cluster=True # 將附近的點聚類
@@ -78,7 +78,8 @@ if 'selected_route' in st.session_state:
             elif station_df.empty:
                 st.info(f"'{station_csv_file}' 中沒有補給站資料。")
             else:
-                st.error("補給站 CSV 檔案中缺少 '經度' 或 '緯度' 欄位。")
+                # 提示使用者缺少正確的經緯度欄位
+                st.error("補給站 CSV 檔案中缺少 'X' 或 'Y' 欄位。")
 
             m.to_streamlit(height=700)
 
@@ -92,6 +93,7 @@ if 'selected_route' in st.session_state:
         st.error(f"找不到 '{selected_route}' 路段的配置資訊。")
 
 else:
-    st.warning("請先回第一頁選擇路段！")
-    if st.button("回主頁"):
-        st.switch_page("page01_test") # 注意：這裡導航回你的主頁 (Home.py)
+    st.warning("請先回**選擇路段頁面**選擇路段！")
+    if st.button("回選擇路段頁面"):
+        # ***關鍵修改點：導航回 "page01_test"***
+        st.switch_page("page01_test") # 導航回你的第一頁 (page01_test.py)
