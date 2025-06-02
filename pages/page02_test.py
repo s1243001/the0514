@@ -20,7 +20,7 @@ section_data = {
     '嘉義-高雄': {'geojson': "jiayi_kaohsung.geojson", 'center': [22.999866, 120.148435], 'station_csv': "station_jiakao.csv"},
     '高雄-屏東': {'geojson': "kaohsung_pingtung.geojson", 'center': [22.402317, 120.536198], 'station_csv': "station_kaoping.csv"},
     '屏東-台東': {'geojson': "pingtung_taitung.geojson", 'center': [22.781440, 120.834135], 'station_csv': "station_pingtait.csv"},
-    '台東-花蓮': {'geojson': "taitung_huaien.geojson", 'center': [23.429920, 121.335207], 'station_csv': "station_taithua.csv"},
+    '台東-花蓮': {'geojson': "taitung_hualien.geojson", 'center': [23.429920, 121.335207], 'station_csv': "station_taithua.csv"},
     '花蓮-宜蘭': {'geojson': "hualien_yilan.geojson", 'center': [24.228917, 121.532195], 'station_csv': "station_huayi.csv"},
     '宜蘭-台北': {'geojson': "yilan_taipei.geojson", 'center': [24.899394, 121.675311], 'station_csv': "station_yitaip.csv"},
 }
