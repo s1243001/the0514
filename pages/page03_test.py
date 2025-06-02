@@ -4,7 +4,7 @@ import pandas as pd
 import os
 import base64 # Import base64 here, as it's used within the main logic
 
-st.title("路段上的旅遊景點")
+st.title("推薦的景點介紹🏖️")
 
 # 從 session_state 讀取使用者選擇的路段
 # 注意：這裡的鍵是 'selected_route'，與第一頁儲存的鍵一致
