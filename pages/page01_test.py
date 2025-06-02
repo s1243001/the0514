@@ -78,6 +78,6 @@ if option: # 確保有選擇的路段
     st.write("想看看這個路段的補給站嗎？")
     if st.button("查看補給站地圖"):
         # ***關鍵修改點：導航到 "pages/Station_Map"***
-        st.switch_page("pages/Station_Map") # 注意：不需要 .py 副檔名
+        st.switch_page("page02_test") # 注意：不需要 .py 副檔名
 else:
     st.info("請從上方下拉選單中選擇一個路段來顯示其地圖和資訊。")
