@@ -57,7 +57,7 @@ road_segments = {
     },
     '新竹-台中': {
         'center': [24.462711, 120.740153],
-        'color': "orange",
+        'color': "red",
         'geojson_file': "hsinchu_taichung.geojson",
         'csv_file': "play_stc.csv",
         'markdown': """
@@ -90,7 +90,7 @@ road_segments = {
     },
     '台中-嘉義': {
         'center': [23.809488, 120.292326],
-        'color': "purple",
+        'color': "red",
         'geojson_file': "taichung_jiayi.geojson",
         'csv_file': "play_tcjia.csv",
         'markdown': """
@@ -124,7 +124,7 @@ road_segments = {
     },
     '嘉義-高雄': {
         'center': [22.999866, 120.148435],
-        'color': "pink",
+        'color': "red",
         'geojson_file': "jiayi_kaohsung.geojson",
         'csv_file': "play_jiakao.csv",
         'markdown': """
@@ -155,7 +155,7 @@ road_segments = {
     },
     '高雄-屏東': {
         'center': [22.402317, 120.536198],
-        'color': "yellow",
+        'color': "red",
         'geojson_file': "kaohsung_pingtung.geojson",
         'csv_file': "play_kaoping.csv",
         'markdown': """
@@ -188,7 +188,7 @@ road_segments = {
     },
     '屏東-台東': {
         'center': [22.781440, 120.834135],
-        'color': "blue",
+        'color': "red",
         'geojson_file': "pingtung_taitung.geojson",
         'csv_file': "play_pingtait.csv",
         'markdown': """
@@ -221,7 +221,7 @@ road_segments = {
     },
     '台東-花蓮': {
         'center': [23.429920, 121.335207],
-        'color': "grey",
+        'color': "red",
         'geojson_file': "taitung_hualien.geojson",
         'csv_file': "play_taithua.csv",
         'markdown': """
@@ -245,7 +245,7 @@ road_segments = {
     },
     '花蓮-宜蘭': {
         'center': [24.228917, 121.532195],
-        'color': "black",
+        'color': "red",
         'geojson_file': "hualien_yilan.geojson",
         'csv_file': "play_huayi.csv",
         'markdown': """
@@ -279,7 +279,7 @@ road_segments = {
     },
     '宜蘭-台北': {
         'center': [24.899394, 121.675311],
-        'color': "green",
+        'color': "red",
         'geojson_file': "yilan_taipei.geojson",
         'csv_file': "play_yitaip.csv",
         'markdown': """
