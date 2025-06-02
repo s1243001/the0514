@@ -93,5 +93,4 @@ if 'selected_route' in st.session_state:
 
 else:
     st.warning("請先回**選擇路段頁面**選擇路段！")
-    if st.button("回選擇路段頁面"):
-        st.switch_page("page01 test") # 導航回你的第一頁 (page01_test.py)
+   
