@@ -6,12 +6,13 @@ import base64 # Import base64 here, as it's used within the main logic
 
 st.title("路段上的旅遊景點")
 
-# Assuming 'option' is passed from the first page, e.g., via st.session_state
-# For demonstration purposes, if 'option' is not yet set, default it to '台北-新竹'
-if 'option' not in st.session_state:
-    st.session_state.option = '台北-新竹'
+# 從 session_state 讀取使用者選擇的路段
+# 注意：這裡的鍵是 'selected_route'，與第一頁儲存的鍵一致
+if 'selected_route' not in st.session_state:
+    st.warning("請先回到第一頁選擇路段。")
+    st.stop() # 如果沒有選擇路段，就停止程式執行
 
-option = st.session_state.option
+option = st.session_state['selected_route']
 
 # Define base paths for your data and images
 PLAY_CSV_FOLDER = "play_csv"
@@ -261,7 +262,7 @@ if option in road_segments:
         if os.path.exists(img_path):
             with open(img_path, "rb") as image_file:
                 encoded_string = base64.b64encode(image_file.read()).decode()
-                # *** Here is the fix: Extract filename without extension ***
+                # Here is the fix: Extract filename without extension
                 placeholder_name = os.path.splitext(img_file)[0] + '_base64'
                 image_placeholders[placeholder_name] = encoded_string
         else:
@@ -275,4 +276,5 @@ if option in road_segments:
     st.markdown(formatted_markdown, unsafe_allow_html=True)
 
 else:
-    st.write("請在第一頁選擇一個路段以顯示詳細資訊。")
+    # 如果 selected_route 不在 road_segments 字典中，提示使用者
+    st.write("所選路段無資料顯示。請回到第一頁重新選擇。")
