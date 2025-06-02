@@ -34,7 +34,7 @@ road_segments = {
     '台北-新竹': {
         'center': [24.949132, 121.182838], # Corrected lat/lon order for Leafmap center
         'color': "red",
-        'geojson_file': "t_s.geojson", # Assuming geojson files have .geojson extension
+        'geojson_file': "taipei_hsinchu.geojson", # Assuming geojson files have .geojson extension
         'csv_file': "play_ts.csv",
         'markdown': """
         ###大溪老街
@@ -52,7 +52,7 @@ road_segments = {
     '新竹-台中': {
         'center': [24.462711, 120.740153],
         'color': "orange",
-        'geojson_file': "s_tc.geojson",
+        'geojson_file': "hsinchu_taichung.geojson",
         'csv_file': "play_stc.csv",
         'markdown': """
         ###白沙屯拱天宮
@@ -76,7 +76,7 @@ road_segments = {
     '台中-嘉義': {
         'center': [23.809488, 120.292326],
         'color': "purple",
-        'geojson_file': "tc_jia.geojson",
+        'geojson_file': "taichung_jiayi.geojson",
         'csv_file': "play_tcjia.csv",
         'markdown': """
         ###八卦山大佛風景區
@@ -100,7 +100,7 @@ road_segments = {
     '嘉義-高雄': {
         'center': [22.999866, 120.148435],
         'color': "pink",
-        'geojson_file': "jia_kao.geojson",
+        'geojson_file': "jiayi_kaohsung.geojson",
         'csv_file': "play_jiakao.csv",
         'markdown': """
         ###嘉義縣科學教育中心-太空教育館
@@ -124,7 +124,7 @@ road_segments = {
     '高雄-屏東': {
         'center': [22.402317, 120.536198],
         'color': "yellow",
-        'geojson_file': "kao_ping.geojson",
+        'geojson_file': "kaohsung_pingtung.geojson",
         'csv_file': "play_kaoping.csv",
         'markdown': """
         ###龍虎塔
@@ -148,7 +148,7 @@ road_segments = {
     '屏東-台東': {
         'center': [22.781440, 120.834135],
         'color': "blue",
-        'geojson_file': "ping_tait.geojson",
+        'geojson_file': "pingtung_taitung.geojson",
         'csv_file': "play_pingtait.csv",
         'markdown': """
         ###壽卡鐵馬驛站
@@ -172,7 +172,7 @@ road_segments = {
     '台東-花蓮': {
         'center': [23.429920, 121.335207],
         'color': "grey",
-        'geojson_file': "tait_hua.geojson",
+        'geojson_file': "taitung_hualien.geojson",
         'csv_file': "play_taithua.csv",
         'markdown': """
         ###鹿野高台
@@ -190,7 +190,7 @@ road_segments = {
     '花蓮-宜蘭': {
         'center': [24.228917, 121.532195],
         'color': "black",
-        'geojson_file': "hua_yi.geojson",
+        'geojson_file': "hualien_yilan.geojson",
         'csv_file': "play_huayi.csv",
         'markdown': """
         ###鯉魚潭風景遊憩區
@@ -214,7 +214,7 @@ road_segments = {
     '宜蘭-台北': {
         'center': [24.899394, 121.675311],
         'color': "green",
-        'geojson_file': "yilan_taip.geojson",
+        'geojson_file': "yilan_taipei.geojson",
         'csv_file': "play_yitaip.csv",
         'markdown': """
         ###福隆舊草嶺隧道
