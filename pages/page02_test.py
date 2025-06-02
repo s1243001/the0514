@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("路段上的補給站們")
+st.title("查看你路線上的補給站🏪")
 
 # 定義路段資料，包含 GeoJSON 和 CSV 補給站檔案路徑
 # 注意：這裡的檔案路徑已移除子目錄前綴
