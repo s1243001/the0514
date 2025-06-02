@@ -14,7 +14,7 @@ st.title("選擇你的路段")
 # 定義所有路段的 GeoJSON 檔案名、中心點和圖片路徑
 # 注意：這裡的中心點座標是 [緯度, 經度]
 section_data = {
-    '台北-新竹': {'geojson': "taipei_hsinchu.geojson", 'center': [24.949132, 121.182838], 'image': 'taihsin_ele.png'},
+    '台北-新竹': {'geojson': "taipei_hsinchu.geojson", 'center': [24.949132, 121.182838], 'image': 'taiphsin_ele.png'},
     '新竹-台中': {'geojson': "hsinchu_taichung.geojson", 'center': [24.462711, 120.740153], 'image': 'hsintaic_ele.png'},
     '台中-嘉義': {'geojson': "taichung_jiayi.geojson", 'center': [23.809488, 120.292326], 'image': 'taicjia_ele.png'},
     '嘉義-高雄': {'geojson': "jiayi_kaohsung.geojson", 'center': [22.999866, 120.148435], 'image': 'jiakao_ele.png'},
