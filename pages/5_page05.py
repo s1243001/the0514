@@ -14,7 +14,7 @@ st.sidebar.info(markdown)
 logo = "https://i.imgur.com/UbOXYAU.png"
 st.sidebar.image(logo)
 
-st.title("Heatmap")
+st.title("資料來源")
 
 with st.expander("See source code"):
     with st.echo():
