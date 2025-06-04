@@ -56,7 +56,7 @@ food_segments = {
     },
     '新竹-台中': {
         'center': [24.462711, 120.740153],
-        'color': "orange", # Changed color for variety
+        'color': "red", # Changed color for variety
         'geojson_file': "hsinchu_taichung.geojson",
         'csv_file': "food_stc.csv",
         'markdown': """
@@ -80,7 +80,7 @@ food_segments = {
     },
     '台中-嘉義': {
         'center': [23.809488, 120.292326],
-        'color': "purple", # Changed color for variety
+        'color': "red", # Changed color for variety
         'geojson_file': "taichung_jiayi.geojson",
         'csv_file': "food_tcjia.csv",
         'markdown': """
@@ -104,7 +104,7 @@ food_segments = {
     },
     '嘉義-高雄': {
         'center': [22.999866, 120.148435],
-        'color': "pink", # Changed color for variety
+        'color': "red", # Changed color for variety
         'geojson_file': "jiayi_kaohsung.geojson",
         'csv_file': "food_jiakao.csv",
         'markdown': """
@@ -128,7 +128,7 @@ food_segments = {
     },
     '高雄-屏東': {
         'center': [22.402317, 120.536198],
-        'color': "yellow", # Changed color for variety
+        'color': "red", # Changed color for variety
         'geojson_file': "kaohsung_pingtung.geojson",
         'csv_file': "food_kaoping.csv",
         'markdown': """
@@ -152,7 +152,7 @@ food_segments = {
     },
     '屏東-台東': {
         'center': [22.781440, 120.834135],
-        'color': "blue", # Changed color for variety
+        'color': "red", # Changed color for variety
         'geojson_file': "pingtung_taitung.geojson",
         'csv_file': "food_pingtait.csv",
         'markdown': """
@@ -170,7 +170,7 @@ food_segments = {
     },
     '台東-花蓮': {
         'center': [23.429920, 121.335207],
-        'color': "grey", # Changed color for variety
+        'color': "red", # Changed color for variety
         'geojson_file': "taitung_hualien.geojson",
         'csv_file': "food_taithua.csv",
         'markdown': """
@@ -188,7 +188,7 @@ food_segments = {
     },
     '花蓮-宜蘭': {
         'center': [24.228917, 121.532195],
-        'color': "black", # Changed color for variety
+        'color': "red", # Changed color for variety
         'geojson_file': "hualien_yilan.geojson",
         'csv_file': "food_huayi.csv",
         'markdown': """
@@ -206,7 +206,7 @@ food_segments = {
     },
     '宜蘭-台北': {
         'center': [24.899394, 121.675311],
-        'color': "green", # Changed color for variety
+        'color': "red", # Changed color for variety
         'geojson_file': "yilan_taipei.geojson",
         'csv_file': "food_yitaip.csv",
         'markdown': """
