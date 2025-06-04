@@ -113,7 +113,10 @@ food_segments = {
         ---
 
         ###西螺 脆皮臭豆腐
-        文字
+        
+        這間店是西螺超人氣的臭豆腐攤位，招牌的脆皮臭豆腐大口咬下是會爆汁的！搭配九層塔、青蔥、泡菜等配料相當很豐富，每到下午營業時段都湧入不少人購買，臭豆腐酥香、特調風味微酸微甜米醬，再搭配個豬血湯真的很滿足。
+        https://ants.tw/xiluo-crispy-stinky-tofu/
+
         <img src="data:image/png;base64,{food_tcjia2_base64}" width="500">
 
         ---
@@ -200,13 +203,19 @@ food_segments = {
         'csv_file': "food_pingtait.csv",
         'markdown': """
         ###卑南豬血湯 侯記老店
-        文字
+        
+        說到台東美食，幾個名氣大觀光客必吃的排隊美食中，位於更生北路上的『卑南豬血湯侯記老店』絕對榜上有名，目前已傳承三代，經營超過七十年。此店的招牌卑南豬血湯內有滿滿的韭菜、酸菜、豬腸和超厚實的豬血，湯頭是用祕方加上大骨去熬煮，因此鮮甜甘美。
+        https://niniyeh.com/hou-bei-nan/
+
         <img src="data:image/png;base64,{food_pingtait1_base64}" width="500">
 
         ---
 
-        ###某一家
-        文字
+        ###榕樹下米苔目
+
+        來到台東除了麻糬、釋迦外，絕對必吃的就是「米苔目」，而且一定要吃最正宗的「榕樹下米苔目」中華路創始的老店，這間店的米苔目有分乾的和湯的，兩個各有千秋；另外他們家的「香酥太平洋鬼頭刀」、「花枝騷」、還有超特別的「嫦娥奔月」都是值得嘗試的好選擇。
+        https://jack74327.pixnet.net/blog/post/71491942
+
         <img src="data:image/png;base64,{food_pingtait2_base64}" width="500">
         """,
         'images': ['food_pingtait1.jpg', 'food_pingtait2.jpg']
@@ -218,13 +227,19 @@ food_segments = {
         'csv_file': "food_taithua.csv",
         'markdown': """
         ###全美行
-        文字
+        
+        來到台東池上免不俗地要找間池上便當來吃，至於要挑哪一間，名氣大的池上便當三巨頭悟饕、家鄉、『全美行』各有擁護，不過當時真正取得池上鐵路月台獨家販售的僅有『全美行池上便當』，是唯一與台鐵合作的池上便當店，如果想吃吃看早期台灣月台叫賣的鐵路便當，『全美行』樸實的古早味飯包組合可是充滿了時代感呢!
+        https://niniyeh.com/%E5%8F%B0%E6%9D%B1%E6%B1%A0%E4%B8%8A%E7%BE%8E%E9%A3%9F%E2%94%82%E5%85%A8%E7%BE%8E%E8%A1%8C%E6%B1%A0%E4%B8%8A%E4%BE%BF%E7%95%B6%E3%80%82/
+
         <img src="data:image/png;base64,{food_taithua1_base64}" width="500">
 
         ---
 
-        ###某一家
-        文字
+        ###愛嬌姨茶餐廳
+        
+        鹿野鄉這家知名餐廳以自家種植的得獎紅烏龍茶聞名，餐點獨具特色，特別是以茶入菜的紅烏龍茶飯，另外像是剝皮辣椒雞湯、綠茶炸豆腐和新鮮的烤魚都是很值得嘗嘗的，在飽餐一頓後還能品嚐老闆精心栽培的冠軍茶，C P 值相當高。
+        https://www.gomaji.com/blog/%E5%8F%B0%E6%9D%B1%E9%B9%BF%E9%87%8E%E9%84%89%E7%BE%8E%E9%A3%9F/
+
         <img src="data:image/png;base64,{food_taithua2_base64}" width="500">
         """,
         'images': ['food_taithua1.jpg', 'food_taithua2.jpg']
@@ -236,13 +251,19 @@ food_segments = {
         'csv_file': "food_huayi.csv",
         'markdown': """
         ###液香扁食
-        文字
+        
+        說到花蓮扁食必須推薦液香扁食，70年的在地老店，招牌的扁食，吃起來是充滿肉香和扎實，豬肉味道稍重一些，湯頭方面蠻普通的，要加胡椒才好喝一點，至於扁食的外皮也是略有口感也較厚實那種，很像比較大顆的餛飩。
+        https://bunnyann.tw/ye-xiang/
+
         <img src="data:image/png;base64,{food_huayi1_base64}" width="500">
 
         ---
 
         ###羅東碳烤燒餅餅店
-        文字
+        
+        招牌的胡椒餅有的沾滿外皮且香氣四溢的白芝麻，不過這間的肉偏瘦，並沒有因為加熱讓油脂爆出，調味上非常足夠鹹香，而不只是光靠黑胡椒調味的嗆辣感。另外紅豆沙酥餅也值得推薦，它和胡椒餅一樣外皮也沾滿白芝麻，卻在體積上略小一點。其內部是滿滿的紅豆沙內餡，很適合當作飯後甜點、下午茶點心，屬於不會太甜膩的食物。
+        https://vocus.cc/article/64cdebdcfd89780001fd31b2
+        
         <img src="data:image/png;base64,{food_huayi2_base64}" width="500">
         """,
         'images': ['food_huayi1.jpg', 'food_huayi2.jpg']
@@ -254,13 +275,19 @@ food_segments = {
         'csv_file': "food_yitaip.csv",
         'markdown': """
         ###十分溜哥燒烤雞翅包飯
-        文字
+        
+        位於平溪車站旁邊的十分溜哥燒烤雞翅包飯，曾被各大媒體推薦，是十分老街超人氣排隊美食。其招牌燒烤雞翅包飯，是在雞翅裡塞入滿滿的火腿蛋炒飯，外皮烤到醬香四溢，撒上白芝麻跟海苔粉，若選擇辣味會在灑上辣椒粉，很適合邊逛老街邊吃。
+        https://hamibobo.tw/liougou/
+
         <img src="data:image/png;base64,{food_yitaip1_base64}" width="500">
 
         ---
 
-        ###羅東碳烤燒餅餅店
-        文字
+        ###七堵家傳營養三明治
+        
+        基隆七堵最多人排隊買來吃的營養三明治，就是這間「七堵家傳營養三明治」，這間店最大的特色，就是把炸得酥酥的麵包夾入每天現買的新鮮番茄、小黃瓜、滷蛋、火腿片，再淋上不甜膩的美乃滋，鹹香酥脆又清爽，每一口都超滿足。不論平日或假日，攤位前總是排滿想吃營養三明治的饕客。
+        https://bunnyann.tw/seven-sandwiches/
+
         <img src="data:image/png;base64,{food_yitaip2_base64}" width="500">
         """,
         'images': ['food_yitaip1.jpg', 'food_yitaip2.jpg']
