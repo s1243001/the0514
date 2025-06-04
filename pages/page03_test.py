@@ -127,9 +127,11 @@ road_segments = {
         'geojson_file': "jiayi_kaohsung.geojson",
         'csv_file': "play_jiakao.csv",
         'markdown': """
-        ###嘉義縣科學教育中心-太空教育館
+        ###嘉油鐵馬道
         
-        文字
+        嘉油鐵馬道係為利用閒置的中油舊鐵道修築，於嘉義市世賢路四段中油廠區旁設為起點，途經美源、光路、獅子、紅瓦厝里等四里，以及嘉義水上鄉三和、下寮、回歸等三村。到達北回歸線站天文廣場，全長3500公尺，規劃成為自行車專用道暨景觀綠廊步道，以增進嘉義市的休閒與觀光資源。
+        https://travel.chiayi.gov.tw/ChiayiTrendStore/TravelInformation/C000005/1/1f75b820-6671-41b3-a860-c47207b8a150
+        
         <img src="data:image/png;base64,{jiakao1_base64}" width="500">
 
         ---
