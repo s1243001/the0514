@@ -37,19 +37,28 @@ food_segments = {
         'csv_file': "food_ts.csv",
         'markdown': """
         ###游記百年油飯
-        文字
+        
+        「百年油飯」是整間店的精神、也是最為招牌的菜式，食材首選桃園在地圓糯米、嚴選香菇、臺灣溫體黑豬後腿肉、臺灣紅蔥頭、嚴選蝦米及蝦皮，加入自家熬製的雞油，糯米以杉木桶蒸熟帶出淡淡木香，再與其他食材一同用小火拌炒至收汁，米粒鹹香油潤、口感Q糯，推薦搭配秘製甜辣醬食用，香氣十足。
+        https://today.line.me/tw/v2/article/gzv9Mjm
+
         <img src="data:image/png;base64,{food_ts1_base64}" width="500">
 
         ---
 
         ###關西牛肉捲餅
-        文字
+        
+        「關西牛肉捲餅」是位於關西老街上的老字號小吃，手工現擀的餅皮吃起來特別酥脆，牛肉捲餅還加了滿滿滿的九層塔，香氣十足，捲餅裡面加了小黃瓜絲、九層塔、牛肉片、雞蛋，牛肉有事先醃漬過，吃起來有點偏鹹，用料還滿豐富的，而且分量很足，光吃１份就很有飽足感。
+        https://supertaste.tvbs.com.tw/pack/345194
+
         <img src="data:image/png;base64,{food_ts2_base64}" width="500">
 
         ---
 
         ###廟口鴨香飯
-        文字
+        
+        曾被許多知名美食節目報導，因此在用餐時段永遠大排長龍。鴨油淋得誠意十足，每口飯吃來香氣滿溢；經過燻烤的鴨肉讓香氣更上層樓。
+        https://bobbyworld.tw/2024-01-01-2606/
+
         <img src="data:image/png;base64,{food_ts3_base64}" width="500">
         """,
         'images': ['food_ts1.jpg', 'food_ts2.jpg', 'food_ts3.jpg']
@@ -61,19 +70,28 @@ food_segments = {
         'csv_file': "food_stc.csv",
         'markdown': """
         ###（東北香粑粑）白沙屯美食
-        文字
+        
+        東北香粑粑地點位於白沙屯拱天宮正後方、香客餐廳文物大樓旁的空地，是排隊的炸物點心攤，東北香粑粑的內餡以里肌肉、香蔥為主，外皮薄而酥脆，吃起來的味道也豐富且多汁，另外加上店家自行製作的辣醬，整體吃起來更加分。
+        https://www.walkerland.com.tw/article/view/278481
+
         <img src="data:image/png;base64,{food_stc1_base64}" width="500">
 
         ---
 
         ###一品香水煎包專賣店
-        文字
+        
+        一品香水煎包是知名的大甲小吃，首先是招牌的水煎包，外皮薄Q帶嚼勁，飽滿的瓠瓜內餡水嫩有口感，調味剛好不過重；再來是豬肉餡餅，外皮金黃微脆酥香，一口咬下內餡湯汁直接流出來，咀嚼中有淡淡的甜味與香氣；最後是韭菜包，同樣是薄脆帶Q的外皮，餡料主要為韭菜冬粉，韭菜口感鮮脆，微帶酥香的口感非常討喜。
+        https://lyes.tw/33212128-%E4%B8%80%E5%93%81%E9%A6%99%E6%B0%B4%E7%85%8E%E5%8C%85/
+
         <img src="data:image/png;base64,{food_stc2_base64}" width="500">
 
         ---
 
         ###發愣吃VARMT - 勤美店
-        文字
+        
+        這間店的人氣招牌「發愣辣拌麵」，裡頭配料有豆芽、蒜泥、青蔥、木耳、洋蔥丁、炙燒豬五花肉，搭配店家自製的蒜辣肉醬。麵條吃起來超Q彈，還帶著香辣及迷人蒜香味。
+        https://supertaste.tvbs.com.tw/food/350835
+        
         <img src="data:image/png;base64,{food_stc3_base64}" width="500">
         """,
         'images': ['food_stc1.jpg', 'food_stc2.jpg', 'food_stc3.jpg']
@@ -85,7 +103,11 @@ food_segments = {
         'csv_file': "food_tcjia.csv",
         'markdown': """
         ###阿添蛤仔麵
-        文字
+        
+        吃彰化的蛤仔麵的特色是會將蛤仔去殼，因此是不用自己剝殼，此外重點的湯頭是清爽鮮甜的，麵的份量也是給的很足，丸子也很好吃。另外骨仔肉麵也是蠻多人推薦的，人氣一點都不輸給蛤仔麵，首先骨仔肉給的份量算是多的，吃起來肉質不乾柴，骨仔肉還帶有軟筋膜，吃起來略有咬勁而且很有層次感，Q軟Q軟的很不錯，重點是湯頭用的是大骨去熬的，喝起來很清甜，跟蛤仔湯頭那種清甜感略有不同。
+        https://blaketravel.tw/blog/post/a-tian
+
+        
         <img src="data:image/png;base64,{food_tcjia1_base64}" width="500">
 
         ---
@@ -97,7 +119,10 @@ food_segments = {
         ---
 
         ###民主火雞肉飯
-        文字
+        
+        火雞肉飯是嘉義最具代表性的小吃，到嘉義市總要吃１碗火雞肉飯才覺得不虛此行。位於東區民族路的「民主火雞肉飯」是嘉義雞肉飯的人氣霸主，無論平日還是假日人潮都沒停過，另外這家火雞肉飯除了觀光客喜歡，連在地人都會來吃。他們家的靈魂油蔥酥醬都是自己製作、不假他人之手，純正的火雞肉搭配香酥油蔥醬汁，鹹香撲鼻，超夠味！
+        https://supertaste.tvbs.com.tw/pack/341122
+        
         <img src="data:image/png;base64,{food_tcjia3_base64}" width="500">
         """,
         'images': ['food_tcjia1.jpg', 'food_tcjia2.jpg', 'food_tcjia3.jpg']
@@ -109,19 +134,28 @@ food_segments = {
         'csv_file': "food_jiakao.csv",
         'markdown': """
         ###味泰豐香雞排
-        文字
+        
+        本店有五花八門的現炸品項，有杏鮑菇、三角骨、馬鈴薯條、雞皮、百頁豆腐、銀絲卷、芋條粿、麥克雞塊、三角薯餅、魚板等，必點推薦第一名絕對是杏鮑菇，味泰豐的杏鮑菇跟別家鹹酥雞店或是夜市的很不一樣，會切成條狀之後再整條拿去炸，等炸好後，老闆娘才會幫你剪成小塊，外皮酥脆，裡頭杏鮑菇更加多汁。
+        https://coffeelife2015.pixnet.net/blog/post/225515081
+        
         <img src="data:image/png;base64,{food_jiakao1_base64}" width="500">
 
         ---
 
         ###城邊真味鱔魚意麵
-        文字
+        
+        創立於1970年，至今已走過五十多個年頭，以鑊氣十足的炒鱔魚作為招牌，酸酸甜甜讓人回味。炒鱔魚意麵也是這裡的人氣菜色，跟炒鱔魚一樣，可選擇勾芡與否。另有生炒花枝與麻油腰花供應，後者鮮美可口，不妨一試。
+        https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/eastern-castle-noodles
+        
         <img src="data:image/png;base64,{food_jiakao2_base64}" width="500">
 
         ---
 
         ###Temperature Studio/溫度劑
-        文字
+        
+        具十年高端餐飲經驗的主廚於2021年開設此店，只設六個座位，不設制式菜單，而是採用當季新鮮食材，糅合歐陸、日本與臺灣元素，製作出由前菜到甜品、溫度與層次堆疊的美食，並由主廚親自介紹菜色，期望為客人帶來充滿溫度的用餐體驗。推薦波特菇鑲肉，還有選用海水養殖虱目魚的魚肚飯。
+        https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/temperature-studio
+
         <img src="data:image/png;base64,{food_jiakao3_base64}" width="500">
         """,
         'images': ['food_jiakao1.jpg', 'food_jiakao2.jpg', 'food_jiakao3.jpg']
@@ -133,19 +167,28 @@ food_segments = {
         'csv_file': "food_kaoping.csv",
         'markdown': """
         ###仁武烤鴨
-        文字
+        
+        位於高雄仁武區的「仁武烤鴨」，​無論平日或假日，店門口總是滿滿的人潮。​店內不僅提供烤鴨料理，還有熱門必點的米血及店家手工自製超Q荷葉餅，搭配甜麵醬和蔥段，讓剛出爐的烤鴨美味更加升級。​烤鴨愛好者，絕對不能錯過這家高雄的烤鴨名店。招牌的「仁武烤鴨」的脆皮片鴨一上桌就香氣撲鼻，外皮烤得金黃酥脆，閃著誘人的油光，讓人還沒開動就口水直流。脆皮片鴨的鴨肉是整支鴨最肥美的地方，鮮嫩多汁，完全不乾柴，香氣迷人。
+        https://vocus.cc/article/68033978fd8978000134adcc
+
         <img src="data:image/png;base64,{food_kaoping1_base64}" width="500">
 
         ---
 
         ###北港蔡三代筒仔米糕
-        文字
+        
+        北港蔡三代筒仔米糕自1956年起屹立在鹽埕區，菜單內容樸實，就只有筒仔米糕、五種湯品及鐵蛋，卻因價廉物美成為高雄人的共同回憶。筒仔米糕選用陳放兩年的舊米製作，再於上桌前淋上滿滿的肉燥汁，糕身軟硬適中，佐以嫩薑同吃十分可口，叫人回味。富滋味的鐵蛋，和吸滿湯汁精華、香味濃郁的蒸蛋湯同樣值得一試。
+        https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/bei-gang-tsai-rice-tube-yancheng
+
         <img src="data:image/png;base64,{food_kaoping2_base64}" width="500">
 
         ---
 
         ###王匠黑鮪魚生魚片&日本料理
-        文字
+        
+        在漁市可說是賣生魚片的業者的一級戰區，而位於華僑市場228號攤的「王匠黑鮪魚生魚片&日本料理」卻有著獨樹一格的特色，充滿日式氛圍的外觀，氣派亮眼的攤位規模，生魚片品質絕佳，加上使用最新鮮的漁獲食材製作日式料理，早已成功擦亮「王匠」招牌，不僅節目報導採訪不斷，更是連外縣市遊客來到東港華僑市場都指名要吃這一攤。
+        https://kenantravel.tw/wjsashimi/
+
         <img src="data:image/png;base64,{food_kaoping3_base64}" width="500">
         """,
         'images': ['food_kaoping1.jpg', 'food_kaoping2.jpg', 'food_kaoping3.jpg']
