@@ -16,7 +16,7 @@ if option == '台北-新竹'
 
         文字
         
-        <img == "food_ts1">
+        <img == "food_ts1.jpg">
 
         ---
 
@@ -24,7 +24,7 @@ if option == '台北-新竹'
 
         文字
 
-        <img == "food_ts2">
+        <img == "food_ts2.jpg">
 
         ---
 
@@ -32,7 +32,7 @@ if option == '台北-新竹'
 
         文字
 
-        <img == "food_ts3">
+        <img == "food_ts3.jpg">
         """)
 
 else if option == '新竹-台中'
@@ -46,7 +46,7 @@ else if option == '新竹-台中'
 
         文字
         
-        <img == "food_stc1">
+        <img == "food_stc1.jpg">
 
         ---
 
@@ -54,7 +54,7 @@ else if option == '新竹-台中'
 
         文字
 
-        <img == "food_stc2">
+        <img == "food_stc2.jpg">
 
         ---
 
@@ -62,7 +62,7 @@ else if option == '新竹-台中'
 
         文字
 
-        <img == "food_stc3">
+        <img == "food_stc3.jpg">
         """)
 
 else if option == '台中-嘉義'
@@ -76,7 +76,7 @@ else if option == '台中-嘉義'
 
         文字
         
-        <img == "food_tcjia1">
+        <img == "food_tcjia1.jpg">
 
         ---
 
@@ -84,7 +84,7 @@ else if option == '台中-嘉義'
 
         文字
 
-        <img == "food_tcjia2">
+        <img == "food_tcjia2.jpg">
 
         ---
 
@@ -92,7 +92,7 @@ else if option == '台中-嘉義'
 
         文字
 
-        <img == "food_tcjia3">
+        <img == "food_tcjia3.jpg">
         """)
 
 else if option == '嘉義-高雄'
@@ -106,7 +106,7 @@ else if option == '嘉義-高雄'
 
         文字
         
-        <img == "food_jiakao1">
+        <img == "food_jiakao1.jpg">
 
         ---
 
@@ -114,7 +114,7 @@ else if option == '嘉義-高雄'
 
         文字
 
-        <img == "food_jiakao2">
+        <img == "food_jiakao2.jpg">
 
         ---
 
@@ -122,7 +122,7 @@ else if option == '嘉義-高雄'
 
         文字
 
-        <img == "food_jiakao3">
+        <img == "food_jiakao3.jpg">
         """)
 
 else if option == '高雄-屏東'
@@ -136,7 +136,7 @@ else if option == '高雄-屏東'
 
         文字
         
-        <img == "food_kaoping1">
+        <img == "food_kaoping1.jpg">
 
         ---
 
@@ -144,7 +144,7 @@ else if option == '高雄-屏東'
 
         文字
 
-        <img == "food_kaoping2">
+        <img == "food_kaoping2.jpg">
 
         ---
 
@@ -152,7 +152,7 @@ else if option == '高雄-屏東'
 
         文字
 
-        <img == "food_kaoping3">
+        <img == "food_kaoping3.jpg">
         """)
 
 else if option == '屏東-台東'
@@ -166,7 +166,7 @@ else if option == '屏東-台東'
 
         文字
         
-        <img == "food_pingtait1">
+        <img == "food_pingtait1.jpg">
 
         ---
 
@@ -174,7 +174,7 @@ else if option == '屏東-台東'
 
         文字
 
-        <img == "food_pingtait2">
+        <img == "food_pingtait2.jpg">
         """)
 
 else if option == '台東-花蓮'
@@ -188,7 +188,7 @@ else if option == '台東-花蓮'
 
         文字
         
-        <img == "food_taithua1">
+        <img == "food_taithua1.jpg">
 
         ---
 
@@ -196,7 +196,7 @@ else if option == '台東-花蓮'
 
         文字
 
-        <img == "food_taithua2">
+        <img == "food_taithua2.jpg">
         """)
 
 
@@ -211,7 +211,7 @@ else if option == '花蓮-宜蘭'
 
         文字
         
-        <img == "food_huayi1">
+        <img == "food_huayi1.jpg">
 
         ---
 
@@ -219,7 +219,7 @@ else if option == '花蓮-宜蘭'
 
         文字
 
-        <img == "food_huayi2">
+        <img == "food_huayi2.jpg">
         """)
 
 else if option == '宜蘭-台北'
@@ -233,7 +233,7 @@ else if option == '宜蘭-台北'
 
         文字
         
-        <img == "food_yitaip1">
+        <img == "food_yitaip1.jpg">
 
         ---
 
@@ -241,7 +241,7 @@ else if option == '宜蘭-台北'
 
         文字
 
-        <img == "food_yitaip2">
+        <img == "food_yitaip2.jpg">
         """)
 
 
