@@ -1,194 +1,274 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
 import pandas as pd
-import numpy as np
-import os # 導入 os 模組用於路徑操作
+import os
+import base64 # Import base64 for image embedding
 
-st.title("路段上的美食")
+st.title("路段上的美食🍴")
 
-# 定義檔案夾的路徑
-FOOD_CSV_DIR = "food_csv"
-FOOD_PNG_DIR = "food_png"
+# 從 session_state 讀取使用者選擇的路段
+if 'selected_route' not in st.session_state:
+    st.warning("請先回到第一頁選擇路段。")
+    st.stop() # 如果沒有選擇路段，就停止程式執行
 
-# 假設 'option' 變數在 Streamlit 應用程式的其他地方定義，例如透過 st.selectbox
-# 這裡為了示範，我們定義一個 'option' 的佔位符
-# 你應該用你應用程式中實際設定 'option' 變數的方式來替換這裡。
-option = st.selectbox(
-    "選擇一個旅遊路線",
-    (
-        "台北-新竹",
-        "新竹-台中",
-        "台中-嘉義",
-        "嘉義-高雄",
-        "高雄-屏東",
-        "屏東-台東",
-        "台東-花蓮",
-        "花蓮-宜蘭",
-        "宜蘭-台北",
-    ),
-)
+option = st.session_state['selected_route']
 
+# Define base paths for your data and images
+FOOD_CSV_FOLDER = "food_csv"
+FOOD_PNG_FOLDER = "food_png"
+GEOJSON_FOLDER = "." # Assuming geojson files are in the root directory or adjust as needed
 
-# --- 第四頁的邏輯 (與你現有的結構相似) ---
+# Function to load geojson (assuming they are in the root or a specified folder)
+def load_geojson(filename):
+    geojson_path = os.path.join(GEOJSON_FOLDER, filename)
+    if os.path.exists(geojson_path):
+        with open(geojson_path, "r", encoding="utf-8") as f:
+            return f.read()
+    else:
+        st.error(f"GeoJSON file not found: {geojson_path}")
+        return None
 
-if option == "台北-新竹":
-    m = leafmap.Map(center=[121.182838, 24.949132], zoom=7, minimap_control=True)
-    style = {"color": "red", "weight": 3, "opacity": 0.8}
-    m.add_geojson(t_s, layer_name="台北-新竹", style=style)
-    # 使用 os.path.join 組合 CSV 檔案的路徑
-    food_csv_path = os.path.join(FOOD_CSV_DIR, "food_ts.csv")
-    m.add_points_from_xy(food_csv_path, x="X", y="Y")
-    st.markdown("###游記百年油飯")
-    st.write("文字")
-    # 使用 st.image 顯示圖片，並使用 os.path.join 組合圖片的路徑
-    st.image(os.path.join(FOOD_PNG_DIR, "food_ts1.jpg"))
-    st.markdown("---")
-    st.markdown("###關西牛肉捲餅")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_ts2.jpg"))
-    st.markdown("---")
-    st.markdown("###廟口鴨香飯")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_ts3.jpg"))
+# Dictionary to hold road segment data for cleaner code (similar to page 3)
+food_segments = {
+    '台北-新竹': {
+        'center': [24.949132, 121.182838], # Corrected lat/lon order
+        'color': "red",
+        'geojson_file': "taipei_hsinchu.geojson",
+        'csv_file': "food_ts.csv",
+        'markdown': """
+        ###游記百年油飯
+        文字
+        <img src="data:image/png;base64,{food_ts1_base64}" width="500">
 
+        ---
 
-elif option == "新竹-台中":
-    m = leafmap.Map(center=[120.740153, 24.462711], zoom=7, minimap_control=True)
-    style = {"color": "orange", "weight": 3, "opacity": 0.8}
-    # 修正 'stlye' 為 'style'
-    m.add_geojson(s_tc, layer_name="新竹-台中", style=style)
-    food_csv_path = os.path.join(FOOD_CSV_DIR, "food_stc.csv")
-    m.add_points_from_xy(food_csv_path, x="X", y="Y")
-    st.markdown("###（東北香粑粑）白沙屯美食")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_stc1.jpg"))
-    st.markdown("---")
-    st.markdown("###一品香水煎包專賣店")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_stc2.jpg"))
-    st.markdown("---")
-    st.markdown("###南瓜屋魔女露露的廚房")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_stc3.jpg"))
+        ###關西牛肉捲餅
+        文字
+        <img src="data:image/png;base64,{food_ts2_base64}" width="500">
 
+        ---
 
-elif option == "台中-嘉義":
-    m = leafmap.Map(center=[120.292326, 23.809488], zoom=7, minimap_control=True)
-    style = {"color": "purple", "weight": 3, "opacity": 0.8}
-    m.add_geojson(tc_jia, layer_name="台中-嘉義", style=style)
-    food_csv_path = os.path.join(FOOD_CSV_DIR, "food_tcjia.csv")
-    m.add_points_from_xy(food_csv_path, x="X", y="Y")
-    st.markdown("###阿添蛤仔麵")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_tcjia1.jpg"))
-    st.markdown("---")
-    st.markdown("###西螺 脆皮臭豆腐")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_tcjia2.jpg"))
-    st.markdown("---")
-    st.markdown("###民主火雞肉飯")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_tcjia3.jpg"))
+        ###廟口鴨香飯
+        文字
+        <img src="data:image/png;base64,{food_ts3_base64}" width="500">
+        """,
+        'images': ['food_ts1.jpg', 'food_ts2.jpg', 'food_ts3.jpg']
+    },
+    '新竹-台中': {
+        'center': [24.462711, 120.740153],
+        'color': "orange", # Changed color for variety
+        'geojson_file': "hsinchu_taichung.geojson",
+        'csv_file': "food_stc.csv",
+        'markdown': """
+        ###（東北香粑粑）白沙屯美食
+        文字
+        <img src="data:image/png;base64,{food_stc1_base64}" width="500">
 
+        ---
 
-elif option == "嘉義-高雄":
-    m = leafmap.Map(center=[120.148435, 22.999866], zoom=7, minimap_control=True)
-    style = {"color": "pink", "weight": 3, "opacity": 0.8}
-    m.add_geojson(jia_kao, layer_name="嘉義-高雄", style=style)
-    food_csv_path = os.path.join(FOOD_CSV_DIR, "food_jiakao.csv")
-    m.add_points_from_xy(food_csv_path, x="X", y="Y")
-    st.markdown("###味泰豐香雞排")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_jiakao1.jpg"))
-    st.markdown("---")
-    st.markdown("###城邊真味鱔魚意麵")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_jiakao2.jpg"))
-    st.markdown("---")
-    st.markdown("###Temperature Studio/溫度劑")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_jiakao3.jpg"))
+        ###一品香水煎包專賣店
+        文字
+        <img src="data:image/png;base64,{food_stc2_base64}" width="500">
 
+        ---
 
-elif option == "高雄-屏東":
-    m = leafmap.Map(center=[120.536198, 22.402317], zoom=7, minimap_control=True)
-    style = {"color": "yellow", "weight": 3, "opacity": 0.8}
-    m.add_geojson(kao_ping, layer_name="高雄-屏東", style=style)
-    food_csv_path = os.path.join(FOOD_CSV_DIR, "food_kaoping.csv")
-    m.add_points_from_xy(food_csv_path, x="X", y="Y")
-    st.markdown("###仁武烤鴨")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_kaoping1.jpg"))
-    st.markdown("---")
-    st.markdown("###北港蔡三代筒仔米糕")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_kaoping2.jpg"))
-    st.markdown("---")
-    st.markdown("###王匠黑鮪魚生魚片&日本料理")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_kaoping3.jpg"))
+        ###南瓜屋魔女露露的廚房
+        文字
+        <img src="data:image/png;base64,{food_stc3_base64}" width="500">
+        """,
+        'images': ['food_stc1.jpg', 'food_stc2.jpg', 'food_stc3.jpg']
+    },
+    '台中-嘉義': {
+        'center': [23.809488, 120.292326],
+        'color': "purple", # Changed color for variety
+        'geojson_file': "taichung_jiayi.geojson",
+        'csv_file': "food_tcjia.csv",
+        'markdown': """
+        ###阿添蛤仔麵
+        文字
+        <img src="data:image/png;base64,{food_tcjia1_base64}" width="500">
 
+        ---
 
-elif option == "屏東-台東":
-    m = leafmap.Map(center=[120.834135, 22.781440], zoom=7, minimap_control=True)
-    style = {"color": "blue", "weight": 3, "opacity": 0.8}
-    # 修正 'syle' 為 'style'
-    m.add_geojson(ping_tait, layer_name="屏東-台東", style=style)
-    food_csv_path = os.path.join(FOOD_CSV_DIR, "food_pingtait.csv")
-    m.add_points_from_xy(food_csv_path, x="X", y="Y")
-    st.markdown("###卑南豬血湯 侯記老店")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_pingtait1.jpg"))
-    st.markdown("---")
-    st.markdown("###某一家")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_pingtait2.jpg"))
+        ###西螺 脆皮臭豆腐
+        文字
+        <img src="data:image/png;base64,{food_tcjia2_base64}" width="500">
 
+        ---
 
-elif option == "台東-花蓮":
-    m = leafmap.Map(center=[121.335207, 23.429920], zoom=7, minimap_control=True)
-    style = {"color": "grey", "weight": 3, "opacity": 0.8}
-    m.add_geojson(tait_hua, layer_name="台東-花蓮", style=style)
-    food_csv_path = os.path.join(FOOD_CSV_DIR, "food_taithua.csv")
-    m.add_points_from_xy(food_csv_path, x="X", y="Y")
-    st.markdown("###全美行")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_taithua1.jpg"))
-    st.markdown("---")
-    st.markdown("###某一家")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_taithua2.jpg"))
+        ###民主火雞肉飯
+        文字
+        <img src="data:image/png;base64,{food_tcjia3_base64}" width="500">
+        """,
+        'images': ['food_tcjia1.jpg', 'food_tcjia2.jpg', 'food_tcjia3.jpg']
+    },
+    '嘉義-高雄': {
+        'center': [22.999866, 120.148435],
+        'color': "pink", # Changed color for variety
+        'geojson_file': "jiayi_kaohsung.geojson",
+        'csv_file': "food_jiakao.csv",
+        'markdown': """
+        ###味泰豐香雞排
+        文字
+        <img src="data:image/png;base64,{food_jiakao1_base64}" width="500">
 
+        ---
 
-elif option == "花蓮-宜蘭":
-    m = leafmap.Map(center=[121.532195, 24.228917], zoom=7, minimap_control=True)
-    style = {"color": "black", "weight": 3, "opacity": 0.8}
-    m.add_geojson(hua_yi, layer_name="花蓮-宜蘭", style=style)
-    food_csv_path = os.path.join(FOOD_CSV_DIR, "food_huayi.csv")
-    m.add_points_from_xy(food_csv_path, x="X", y="Y")
-    st.markdown("###液香扁食")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_huayi1.jpg"))
-    st.markdown("---")
-    st.markdown("###羅東碳烤燒餅餅店")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_huayi2.jpg"))
+        ###城邊真味鱔魚意麵
+        文字
+        <img src="data:image/png;base64,{food_jiakao2_base64}" width="500">
 
+        ---
 
-elif option == "宜蘭-台北":
-    m = leafmap.Map(center=[121.675311, 24.899394], zoom=7, minimap_control=True)
-    style = {"color": "green", "weight": 3, "opacity": 0.8}
-    m.add_geojson(yilan_taip, layer_name="宜蘭-台北", style=style)
-    food_csv_path = os.path.join(FOOD_CSV_DIR, "food_yitaip.csv")
-    m.add_points_from_xy(food_csv_path, x="X", y="Y")
-    st.markdown("###十分溜哥燒烤雞翅包飯")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_yitaip1.jpg"))
-    st.markdown("---")
-    st.markdown("###羅東碳烤燒餅餅店")
-    st.write("文字")
-    st.image(os.path.join(FOOD_PNG_DIR, "food_yitaip2.jpg"))
+        ###Temperature Studio/溫度劑
+        文字
+        <img src="data:image/png;base64,{food_jiakao3_base64}" width="500">
+        """,
+        'images': ['food_jiakao1.jpg', 'food_jiakao2.jpg', 'food_jiakao3.jpg']
+    },
+    '高雄-屏東': {
+        'center': [22.402317, 120.536198],
+        'color': "yellow", # Changed color for variety
+        'geojson_file': "kaohsung_pingtung.geojson",
+        'csv_file': "food_kaoping.csv",
+        'markdown': """
+        ###仁武烤鴨
+        文字
+        <img src="data:image/png;base64,{food_kaoping1_base64}" width="500">
 
+        ---
 
-# 顯示地圖
-m.to_streamlit(height=700)
+        ###北港蔡三代筒仔米糕
+        文字
+        <img src="data:image/png;base64,{food_kaoping2_base64}" width="500">
+
+        ---
+
+        ###王匠黑鮪魚生魚片&日本料理
+        文字
+        <img src="data:image/png;base64,{food_kaoping3_base64}" width="500">
+        """,
+        'images': ['food_kaoping1.jpg', 'food_kaoping2.jpg', 'food_kaoping3.jpg']
+    },
+    '屏東-台東': {
+        'center': [22.781440, 120.834135],
+        'color': "blue", # Changed color for variety
+        'geojson_file': "pingtung_taitung.geojson",
+        'csv_file': "food_pingtait.csv",
+        'markdown': """
+        ###卑南豬血湯 侯記老店
+        文字
+        <img src="data:image/png;base64,{food_pingtait1_base64}" width="500">
+
+        ---
+
+        ###某一家
+        文字
+        <img src="data:image/png;base64,{food_pingtait2_base64}" width="500">
+        """,
+        'images': ['food_pingtait1.jpg', 'food_pingtait2.jpg']
+    },
+    '台東-花蓮': {
+        'center': [23.429920, 121.335207],
+        'color': "grey", # Changed color for variety
+        'geojson_file': "taitung_hualien.geojson",
+        'csv_file': "food_taithua.csv",
+        'markdown': """
+        ###全美行
+        文字
+        <img src="data:image/png;base64,{food_taithua1_base64}" width="500">
+
+        ---
+
+        ###某一家
+        文字
+        <img src="data:image/png;base64,{food_taithua2_base64}" width="500">
+        """,
+        'images': ['food_taithua1.jpg', 'food_taithua2.jpg']
+    },
+    '花蓮-宜蘭': {
+        'center': [24.228917, 121.532195],
+        'color': "black", # Changed color for variety
+        'geojson_file': "hualien_yilan.geojson",
+        'csv_file': "food_huayi.csv",
+        'markdown': """
+        ###液香扁食
+        文字
+        <img src="data:image/png;base64,{food_huayi1_base64}" width="500">
+
+        ---
+
+        ###羅東碳烤燒餅餅店
+        文字
+        <img src="data:image/png;base64,{food_huayi2_base64}" width="500">
+        """,
+        'images': ['food_huayi1.jpg', 'food_huayi2.jpg']
+    },
+    '宜蘭-台北': {
+        'center': [24.899394, 121.675311],
+        'color': "green", # Changed color for variety
+        'geojson_file': "yilan_taipei.geojson",
+        'csv_file': "food_yitaip.csv",
+        'markdown': """
+        ###十分溜哥燒烤雞翅包飯
+        文字
+        <img src="data:image/png;base64,{food_yitaip1_base64}" width="500">
+
+        ---
+
+        ###羅東碳烤燒餅餅店
+        文字
+        <img src="data:image/png;base64,{food_yitaip2_base64}" width="500">
+        """,
+        'images': ['food_yitaip1.jpg', 'food_yitaip2.jpg']
+    }
+}
+
+# --- Main logic to display map and information ---
+
+if option in food_segments:
+    segment_info = food_segments[option]
+
+    # Initialize map
+    # Note: Corrected center order to [latitude, longitude]
+    m = leafmap.Map(center=segment_info['center'], zoom=7, minimap_control=True)
+    style = {"color": segment_info['color'], "weight": 3, "opacity": 0.8}
+
+    # Add GeoJSON
+    geojson_data = load_geojson(segment_info['geojson_file'])
+    if geojson_data:
+        m.add_geojson(geojson_data, layer_name=option, style=style)
+
+    # Add points from CSV
+    csv_path = os.path.join(FOOD_CSV_FOLDER, segment_info['csv_file'])
+    if os.path.exists(csv_path):
+        m.add_points_from_xy(csv_path, x="X", y="Y")
+    else:
+        st.error(f"CSV file not found: {csv_path}")
+
+    # Display map
+    m.to_streamlit(height=700)
+
+    # Prepare markdown with images
+    image_placeholders = {}
+    for img_file in segment_info['images']:
+        img_path = os.path.join(FOOD_PNG_FOLDER, img_file)
+        if os.path.exists(img_path):
+            with open(img_path, "rb") as image_file:
+                encoded_string = base64.b64encode(image_file.read()).decode()
+                # Extract filename without extension for placeholder name
+                placeholder_name = os.path.splitext(img_file)[0] + '_base64'
+                image_placeholders[placeholder_name] = encoded_string
+        else:
+            st.warning(f"Image file not found: {img_path}. Placeholder will be empty.")
+            # Even if not found, add to dictionary to prevent KeyError
+            placeholder_name = os.path.splitext(img_file)[0] + '_base64'
+            image_placeholders[placeholder_name] = "" # Empty string if image not found
+
+    # Format the markdown string with the base64 encoded images
+    formatted_markdown = segment_info['markdown'].format(**image_placeholders)
+    st.markdown(formatted_markdown, unsafe_allow_html=True)
+
+else:
+    # 如果 selected_route 不在 food_segments 字典中，提示使用者
+    st.write("所選路段無資料顯示。請回到第一頁重新選擇。")
