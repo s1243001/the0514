@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import os # 導入 os 模組用於路徑操作
 
-st.title("路段上的旅遊景點")
+st.title("路段上的美食")
 
 # 定義檔案夾的路徑
 FOOD_CSV_DIR = "food_csv"
