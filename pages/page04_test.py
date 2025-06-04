@@ -4,7 +4,7 @@ import pandas as pd
 import os
 import base64 # Import base64 for image embedding
 
-st.title("路段上的美食🍴")
+st.title(" 推薦的美食餐廳🍝")
 
 # 從 session_state 讀取使用者選擇的路段
 if 'selected_route' not in st.session_state:
