@@ -72,7 +72,7 @@ food_segments = {
 
         ---
 
-        ###南瓜屋魔女露露的廚房
+        ###發愣吃VARMT - 勤美店
         文字
         <img src="data:image/png;base64,{food_stc3_base64}" width="500">
         """,
