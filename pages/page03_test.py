@@ -93,29 +93,8 @@ road_segments = {
         'geojson_file': "taichung_jiayi.geojson",
         'csv_file': "play_tcjia.csv",
         'markdown': """
-        ###八卦山大佛風景區
         
-　      asa
-
-        <img src="data:image/png;base64,{tcjia1_base64}" width="500">
-
-        ---
-        
-        ###員林神社鳥居
-        
-       asa
-
-        <img src="data:image/png;base64,{tcjia2_base64}" width="500">
-
-        ---
-
-        ###嘉義北門驛
-        
-        asa
-
-        <img src="data:image/png;base64,{tcjia3_base64}" width="500">
-        """,
-        'images': ['tcjia1.jpg', 'tcjia2.jpg', 'tcjia3.jpg']
+        """
     },
     '嘉義-高雄': {
         'center': [22.999866, 120.148435],
